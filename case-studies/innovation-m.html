@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Innovation M Services | SEO Transformation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f2eb;
+    --cream: #ede9df;
+    --accent: #c8502a;
+    --accent2: #2a6e4e;
+    --gold: #c9a84c;
+    --muted: #6b6560;
+    --border: #d4cfc6;
+    --card-bg: #ffffff;
+    --highlight: #fff8ee;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    z-index: 1000;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 242, 235, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--accent); }
+  .nav-back::before { content: '←'; font-size: 14px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 140px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(120px, 18vw, 260px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(10,10,15,0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 520px;
+    margin-top: 28px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-meta-strip {
+    display: flex;
+    gap: 60px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .hero-meta-item span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  /* RESULTS BANNER */
+  .results-banner {
+    background: var(--cream);
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .results-banner::before {
+    content: 'RESULTS';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(10,10,15,0.03);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+
+  .results-banner h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .result-card {
+    background: var(--card-bg);
+    padding: 40px 36px;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .result-card:hover { background: var(--highlight); }
+
+  .result-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 6vw, 86px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .result-num .accent { color: var(--accent); }
+  .result-num .gold { color: var(--gold); }
+  .result-num .green { color: var(--accent2); }
+
+  .result-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .result-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .result-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .badge-up { background: rgba(42,110,78,0.1); color: var(--accent2); }
+  .badge-new { background: rgba(200,80,42,0.1); color: var(--accent); }
+  .badge-ai { background: rgba(201,168,76,0.12); color: var(--gold); }
+
+  /* SECTIONS */
+  .section { padding: 100px 60px; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4.5vw, 54px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .section-heading em { font-style: italic; color: var(--accent); }
+
+  .section-body {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 680px;
+    line-height: 1.85;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* BEFORE/AFTER */
+  .ba-section { background: var(--cream); }
+
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+
+  .ba-col { padding: 48px 40px; }
+  .ba-col.before { background: rgba(200,80,42,0.04); border-right: 1px solid var(--border); }
+  .ba-col.after { background: rgba(42,110,78,0.04); }
+
+  .ba-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    background: var(--card-bg);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .ba-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--accent);
+  }
+
+  .ba-tag {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    display: inline-block;
+    font-family: 'Syne', sans-serif;
+  }
+  .before .ba-tag { background: rgba(200,80,42,0.1); color: var(--accent); }
+  .after .ba-tag { background: rgba(42,110,78,0.1); color: var(--accent2); }
+
+  .ba-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .ba-item:last-child { border-bottom: none; }
+
+  .ba-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .before .ba-dot { background: var(--accent); }
+  .after .ba-dot { background: var(--accent2); }
+
+  .ba-item-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+  }
+  .ba-item-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* CHALLENGE */
+  .challenge-section { background: var(--paper); }
+
+  .challenge-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 36px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .challenge-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+  .challenge-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .challenge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: rgba(200,80,42,0.07);
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+
+  .challenge-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .challenge-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* STRATEGY */
+  .strategy-section { background: var(--highlight); border-top: 1px solid var(--border); }
+
+  .strategy-pillar {
+    border-top: 2px solid var(--ink);
+    padding-top: 28px;
+    padding-bottom: 28px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: start;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pillar-tag {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .pillar-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .pillar-content p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* DELIVERABLES */
+  .deliverable-list { list-style: none; padding: 0; }
+
+  .deliverable-list li {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .deliverable-list li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* AI SECTION */
+  .ai-section { background: var(--highlight); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .ai-score-display {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-score-display::before {
+    content: 'AI';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(10,10,15,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+  }
+
+  .ai-score-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-score-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-platforms {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ai-platform-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 2px;
+    text-align: left;
+  }
+
+  .ai-platform-name {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .ai-platform-nums { display: flex; gap: 16px; }
+
+  .ai-pnum {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .ai-pnum span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  /* METRICS */
+  .metrics-section { background: var(--cream); }
+
+  .metric-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr 160px;
+    align-items: center;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .metric-row:last-child { border-bottom: none; }
+
+  .metric-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .metric-bar-wrap {
+    position: relative;
+    height: 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .metric-bar {
+    height: 100%;
+    border-radius: 3px;
+    transform-origin: left;
+    animation: barGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: scaleX(0);
+  }
+  @keyframes barGrow { to { transform: scaleX(1); } }
+
+  .metric-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .metric-sub {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* QUOTE */
+  .quote-section {
+    background: var(--accent);
+    padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '"';
+    position: absolute;
+    left: 40px;
+    top: -40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 300px;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 40px);
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    max-width: 860px;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-attr {
+    margin-top: 32px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--paper);
+    padding: 120px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: 'GROW';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(10,10,15,0.03);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .cta-label {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5.5vw, 72px);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 640px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-heading em { font-style: italic; color: var(--accent); }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-btn:hover { background: #a8401e; transform: translateY(-2px); }
+  .cta-btn::after { content: '→'; }
+
+  /* FOOTER */
+  footer {
+    background: #06060a;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  footer .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: rgba(245,242,235,0.4);
+    letter-spacing: 0.08em;
+  }
+  footer .logo span { color: var(--accent); }
+  footer p { font-size: 11px; color: rgba(245,242,235,0.25); letter-spacing: 0.08em; }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 48px;
+    left: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .scroll-hint-line {
+    width: 48px;
+    height: 1px;
+    background: var(--muted);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { width: 48px; opacity: 0.4; }
+    50% { width: 64px; opacity: 1; }
+  }
+
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 140px 32px 60px; }
+    .section { padding: 70px 32px; }
+    .results-banner { padding: 60px 32px; }
+    .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; gap: 48px; }
+    .three-col { grid-template-columns: 1fr 1fr; }
+    .ai-grid { grid-template-columns: 1fr; }
+    .strategy-pillar { grid-template-columns: 1fr; gap: 12px; }
+    .quote-section, .cta-section { padding: 70px 32px; }
+    footer { padding: 32px; flex-direction: column; gap: 16px; text-align: center; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .ba-divider { padding: 16px 24px; border: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .ba-col { padding: 32px 24px; }
+    .hero-meta-strip { flex-wrap: wrap; gap: 28px; }
+  }
+
+  @media (max-width: 640px) {
+    .results-grid { grid-template-columns: 1fr; }
+    .three-col { grid-template-columns: 1fr; }
+    .metric-row { grid-template-columns: 1fr 2fr 100px; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <a href="../index.html#portfolio" class="nav-logo">PORTFOLIO<span>.</span></a>
+  <a href="../index.html#portfolio" class="nav-back">All Case Studies</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">SEO</div>
+  <div>
+    <div class="hero-tag">Case Study · B2B · IT Managed Services</div>
+    <h1 class="hero-title">From Invisible to<br><em>Industry Presence</em></h1>
+    <p class="hero-subtitle">A full-spectrum SEO engagement that built an IT managed services provider from zero digital footprint to 7,000 monthly organic visitors — ranking for 1,200+ keywords, earning 299 referring domains, and establishing AI search visibility across every major LLM platform.</p>
+  </div>
+
+  <div class="hero-meta-strip">
+    <div class="hero-meta-item">
+      <label>Client</label>
+      <span>Innovation M Services</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Industry</label>
+      <span>IT / Managed Services</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Scope</label>
+      <span>Full-Spectrum SEO</span>
+    </div>
+    <div class="hero-meta-item">
+      <label>Region</label>
+      <span>Worldwide (17% US)</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- KEY RESULTS -->
+<section class="results-banner">
+  <h2>Key Results at a Glance</h2>
+  <div class="results-grid">
+    <div class="result-card fade-in">
+      <div class="result-badge badge-up">Built</div>
+      <div class="result-num"><span class="green">7K</span></div>
+      <div class="result-label">Monthly Organic Traffic</div>
+      <div class="result-desc">From zero organic presence to 7,000 verified monthly sessions — entirely earned through non-paid search visibility in the competitive IT services vertical.</div>
+    </div>
+    <div class="result-card fade-in">
+      <div class="result-badge badge-up">Ranked</div>
+      <div class="result-num"><span class="accent">1.2K</span></div>
+      <div class="result-label">Organic Keywords Ranking</div>
+      <div class="result-desc">1,200+ keywords ranking across managed IT, cloud solutions, cybersecurity, and business continuity queries — all built from scratch in a highly competitive space.</div>
+    </div>
+    <div class="result-card fade-in">
+      <div class="result-badge badge-new">Earned</div>
+      <div class="result-num"><span class="gold">299</span></div>
+      <div class="result-label">Referring Domains</div>
+      <div class="result-desc">299 unique referring domains acquired through white-hat off-page SEO — IT publications, tech directories, and niche authority placements. 5,800 total backlinks built.</div>
+    </div>
+    <div class="result-card fade-in">
+      <div class="result-badge badge-ai">New</div>
+      <div class="result-num"><span class="gold">14</span></div>
+      <div class="result-label">AI Visibility Score</div>
+      <div class="result-desc">Brand now cited across ChatGPT, Google AI Overview, AI Mode & Gemini — 68 cited pages across all four major AI search platforms from zero prior presence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section ba-section">
+  <div class="section-label">00 — The Transformation at a Glance</div>
+  <h2 class="section-heading">Where it <em>started</em> vs. where it ended</h2>
+  <p class="section-body">A technically capable brand with genuine IT expertise — but zero search presence. Here's exactly what changed.</p>
+
+  <div class="ba-grid fade-in">
+    <div class="ba-col before">
+      <span class="ba-tag">Starting Point</span>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Near-zero organic traffic</div><div class="ba-item-sub">No indexed keyword positions generating sessions</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Authority Score: 0</div><div class="ba-item-sub">Invisible to both buyers and search engines</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">No referring domains</div><div class="ba-item-sub">Zero link equity — completely blank backlink profile</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Thin, unoptimized content</div><div class="ba-item-sub">Service pages existed but lacked depth or keyword strategy</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Technical debt unresolved</div><div class="ba-item-sub">Crawl issues, missing schema, slow Core Web Vitals</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Zero AI search presence</div><div class="ba-item-sub">Not cited by any AI platform or LLM-powered search</div></div></div>
+    </div>
+    <div class="ba-divider"><div class="ba-arrow">→</div></div>
+    <div class="ba-col after">
+      <span class="ba-tag">After Full SEO</span>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">7,000 monthly organic visitors</div><div class="ba-item-sub">Consistent, qualified B2B IT buyer traffic</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">Authority Score: 9 — Established</div><div class="ba-item-sub">Real domain credibility built from zero</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">299 referring domains · 5,800 backlinks</div><div class="ba-item-sub">Editorial, earned, and penalty-proof link profile</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">1,200 keywords ranking</div><div class="ba-item-sub">Full topical coverage across IT services verticals</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">All technical issues resolved</div><div class="ba-item-sub">Clean crawl, schema in place, Core Web Vitals green</div></div></div>
+      <div class="ba-item"><div class="ba-dot"></div><div><div class="ba-item-text">AI Visibility Score: 14 · 68 cited pages</div><div class="ba-item-sub">Cited across ChatGPT, AI Overview, AI Mode & Gemini</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHALLENGE -->
+<section class="section challenge-section">
+  <div class="section-label">01 — The Challenge</div>
+  <div class="two-col">
+    <div>
+      <h2 class="section-heading">Genuine IT expertise with <em>zero</em> digital footprint</h2>
+      <p class="section-body">Innovation M Services had real capability — managed infrastructure, cloud migration, cybersecurity, and business continuity solutions. But in search, they didn't exist. Competitors owned the first page for every high-intent IT services keyword. The mission wasn't just rankings — it was building a credible, defensible authority presence in one of the most technically demanding B2B verticals, where established MSPs have years of link equity and content depth as a moat.</p>
+    </div>
+    <div class="three-col" style="grid-template-columns: 1fr 1fr; gap: 20px; align-self: center;">
+      <div class="challenge-card fade-in">
+        <div class="challenge-num">01</div>
+        <div class="challenge-title">Zero Domain Authority</div>
+        <div class="challenge-text">Authority Score of zero at project start — no link equity, no trust signals, and no ability to compete for any keyword against established MSP players.</div>
+      </div>
+      <div class="challenge-card fade-in">
+        <div class="challenge-num">02</div>
+        <div class="challenge-title">Technical Debt</div>
+        <div class="challenge-text">Crawl errors, missing structured data, slow page experience, and an unoptimized site architecture were silently suppressing every ranking opportunity.</div>
+      </div>
+      <div class="challenge-card fade-in">
+        <div class="challenge-num">03</div>
+        <div class="challenge-title">No Content Strategy</div>
+        <div class="challenge-text">Basic service pages existed but with zero topical depth — no keyword targeting, no content clusters, no ability to rank for the informational queries that drive B2B buyer decisions.</div>
+      </div>
+      <div class="challenge-card fade-in">
+        <div class="challenge-num">04</div>
+        <div class="challenge-title">Zero AI Search Presence</div>
+        <div class="challenge-text">No presence in AI-generated answers across any platform — a compounding disadvantage as IT buyers increasingly start research inside AI assistants rather than traditional search.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="section strategy-section">
+  <div class="section-label">02 — How It Was Done</div>
+  <h2 class="section-heading">4 pillars. 6 disciplines.<br><em>Compounding results.</em></h2>
+  <p class="section-body" style="margin-bottom: 72px;">No single tactic builds B2B search authority. This engagement was structured as a complete system — technical foundations first, then content and links, then AI visibility. Each layer unlocked the next. Here's exactly what was built and what it delivered.</p>
+
+  <div class="strategy-pillar fade-in">
+    <div class="pillar-tag" style="color: var(--accent);">
+      <span style="font-size:12px; opacity:0.6; display:block; margin-bottom:3px; letter-spacing:0.18em;">PILLAR ONE</span>
+      Technical SEO
+    </div>
+    <div class="pillar-content">
+      <h4>The Foundation — Fixing What Was Holding Everything Back</h4>
+      <p>Before a single keyword was targeted or a piece of content written, the technical backbone had to be right. A full site audit uncovered crawl inefficiencies, missing schema markup, canonical issues, and Core Web Vitals failures across the board — all silently capping the site's ability to rank for anything, including its own brand terms.</p>
+      <p>Every critical and high-priority issue was resolved: rebuilt the XML sitemap architecture, corrected robots.txt configuration, implemented structured data for service and organisation entities, and addressed LCP and CLS across key landing pages. Clean crawl paths and fast-loading pages became the launchpad for everything that followed.</p>
+      <div class="tag-list">
+        <span class="tag">Full Site Audit</span>
+        <span class="tag">Core Web Vitals (LCP, CLS, INP)</span>
+        <span class="tag">Schema Markup Implementation</span>
+        <span class="tag">Crawl Budget Optimization</span>
+        <span class="tag">Canonical Architecture</span>
+        <span class="tag">XML Sitemap Rebuild</span>
+        <span class="tag">Redirect Chain Cleanup</span>
+        <span class="tag">Mobile-First Indexing</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-pillar fade-in">
+    <div class="pillar-tag" style="color: var(--accent2);">
+      <span style="font-size:12px; opacity:0.6; display:block; margin-bottom:3px; letter-spacing:0.18em;">PILLAR TWO</span>
+      On-Page & Content
+    </div>
+    <div class="pillar-content">
+      <h4>Building Topical Authority Across the IT Services Landscape</h4>
+      <p>A comprehensive keyword architecture was built first — mapping 1,200+ target terms across service verticals, intent stages, and geographic markets. Every page was assigned a precise purpose: transactional pages for ready-to-buy queries, informational content capturing the research phase, and pillar pages anchoring topical clusters around cloud infrastructure, cybersecurity, managed IT, and business continuity.</p>
+      <p>Service pages were rewritten from the ground up with keyword depth, semantic structure, and E-E-A-T signals throughout. A supporting blog architecture gave the domain topical breadth while internal linking distributed authority across every page that mattered. Meta architecture was rebuilt site-wide for CTR and crawl efficiency.</p>
+      <div class="tag-list">
+        <span class="tag">1,200+ Keywords Mapped</span>
+        <span class="tag">Service Page Rewrites</span>
+        <span class="tag">Pillar Page Architecture</span>
+        <span class="tag">Blog & Content Calendar</span>
+        <span class="tag">E-E-A-T Signal Enhancement</span>
+        <span class="tag">Internal Linking Mesh</span>
+        <span class="tag">Featured Snippet Targeting</span>
+        <span class="tag">Competitor Content Gaps</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-pillar fade-in">
+    <div class="pillar-tag" style="color: var(--gold);">
+      <span style="font-size:12px; opacity:0.6; display:block; margin-bottom:3px; letter-spacing:0.18em;">PILLAR THREE</span>
+      Off-Page SEO
+    </div>
+    <div class="pillar-content">
+      <h4>Earning Trust — 299 Domains, Zero Shortcuts</h4>
+      <p>With no existing link equity, the off-page campaign had to move fast without compromising quality. 299 referring domains and 5,800 backlinks were earned — not bought — through deliberate, multi-channel outreach: targeted placements in IT and technology publications, business directory submissions across US-focused platforms, guest content on managed services and cloud infrastructure blogs, and partner ecosystem link development.</p>
+      <p>Every domain was vetted for relevance, editorial quality, and traffic value. A competitor link gap analysis identified high-authority placements rivals held but hadn't defended. Monthly toxic link audits kept the profile clean throughout the build. By the end, the Authority Score had climbed from zero to 9 — a genuine, penalty-proof foundation with real compounding value.</p>
+      <div class="tag-list">
+        <span class="tag">299 Referring Domains</span>
+        <span class="tag">5,800 Backlinks Built</span>
+        <span class="tag">IT Publication Outreach</span>
+        <span class="tag">Business Directory Submissions</span>
+        <span class="tag">Guest Posting — MSP & Cloud</span>
+        <span class="tag">Competitor Link Gap Analysis</span>
+        <span class="tag">Toxic Link Audit & Disavow</span>
+        <span class="tag">Partner Link Network</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="strategy-pillar fade-in">
+    <div class="pillar-tag" style="color: #8a5cf6;">
+      <span style="font-size:12px; opacity:0.6; display:block; margin-bottom:3px; letter-spacing:0.18em;">PILLAR FOUR</span>
+      AI Search Optimization
+    </div>
+    <div class="pillar-content">
+      <h4>The New Frontier — Cited Where B2B Research Now Begins</h4>
+      <p>As IT buyers increasingly start vendor research inside AI assistants, appearing in AI-generated answers is no longer optional. Content was restructured for citability: clean answer-block formatting, entity-rich prose, and LLM-friendly information architecture that makes it straightforward for AI systems to surface and attribute the brand across all platforms.</p>
+      <p>The result: an AI Visibility Score of 14 from zero, with 68 pages now cited across Google AI Overview (2 mentions · 22 cited pages), Google AI Mode (2 mentions · 34 cited pages), and ChatGPT (21 cited pages). Every competitor ignoring GEO and AEO today is a harder gap to close tomorrow — this brand started early.</p>
+      <div class="tag-list">
+        <span class="tag">AI Visibility Score: 14</span>
+        <span class="tag">68 Cited Pages</span>
+        <span class="tag">Answer Engine Optimization</span>
+        <span class="tag">Citation-Worthy Content Structure</span>
+        <span class="tag">LLM Entity Reinforcement</span>
+        <span class="tag">Generative Search Strategy</span>
+        <span class="tag">Structured Answer Blocks</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLE BREAKDOWN -->
+  <div class="fade-in" style="margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border);">
+    <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px;">Full Deliverable Breakdown — All SEO Disciplines</div>
+    <div class="three-col" style="gap: 24px;">
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 32px; border-radius: 2px; border-top: 3px solid var(--accent);">
+        <div style="font-size: 20px; margin-bottom: 12px;">⚙️</div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">Technical SEO</div>
+        <ul class="deliverable-list">
+          <li>Full audit — all critical issues resolved</li>
+          <li>Core Web Vitals (LCP, CLS, INP) — green</li>
+          <li>Schema markup — service & org entities</li>
+          <li>XML sitemap & robots.txt rebuild</li>
+          <li>Redirect chains & 404 cleanup</li>
+          <li>Crawl budget optimization</li>
+          <li>Mobile-first indexing readiness</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 32px; border-radius: 2px; border-top: 3px solid var(--accent2);">
+        <div style="font-size: 20px; margin-bottom: 12px;">📝</div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">On-Page SEO</div>
+        <ul class="deliverable-list">
+          <li>1,200+ keywords researched & mapped</li>
+          <li>Intent classification for all pages</li>
+          <li>Title tag & meta description rebuild</li>
+          <li>H-tag hierarchy restructuring</li>
+          <li>Service & landing page rewrites</li>
+          <li>E-E-A-T signal enhancement</li>
+          <li>Featured snippet optimization</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 32px; border-radius: 2px; border-top: 3px solid var(--gold);">
+        <div style="font-size: 20px; margin-bottom: 12px;">🧠</div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">Content Strategy</div>
+        <ul class="deliverable-list">
+          <li>Full IT services topic universe mapped</li>
+          <li>Pillar pages built per service cluster</li>
+          <li>Supporting blog content published</li>
+          <li>FAQ schema coverage deployed</li>
+          <li>Internal linking mesh across site</li>
+          <li>Competitor content gap exploitation</li>
+          <li>Evergreen & demand-led content calendar</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 32px; border-radius: 2px; border-top: 3px solid var(--accent);">
+        <div style="font-size: 20px; margin-bottom: 12px;">🔗</div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">Off-Page SEO</div>
+        <ul class="deliverable-list">
+          <li>299 referring domains acquired</li>
+          <li>5,800 total backlinks built</li>
+          <li>IT & tech publication outreach</li>
+          <li>Business directory submissions (US)</li>
+          <li>Guest posting — MSP & cloud platforms</li>
+          <li>Competitor link gap exploitation</li>
+          <li>Toxic link audit & disavow</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 32px; border-radius: 2px; border-top: 3px solid #8a5cf6;">
+        <div style="font-size: 20px; margin-bottom: 12px;">🤖</div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">AI Search (GEO / AEO)</div>
+        <ul class="deliverable-list">
+          <li>AI Visibility Score: 14 (from 0)</li>
+          <li>ChatGPT: 0 mentions · 21 cited pages</li>
+          <li>AI Overview: 2 mentions · 22 cited</li>
+          <li>AI Mode: 2 mentions · 34 cited</li>
+          <li>Gemini: 0 mentions · 2 cited pages</li>
+          <li>Citation-worthy content structure</li>
+          <li>LLM-friendly entity reinforcement</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AI VISIBILITY -->
+<section class="section ai-section">
+  <div class="section-label">03 — AI Search Visibility</div>
+  <div class="ai-grid">
+    <div>
+      <h2 class="section-heading">Visible everywhere,<br>including <em>AI search</em></h2>
+      <p class="section-body">The final phase of this engagement tackled the newest frontier in B2B discovery — AI-generated answers. Through structured content optimisation, entity reinforcement, and citation-signal architecture, the brand achieved presence across all four major AI search platforms.</p>
+      <p class="section-body" style="margin-top: 20px;">With 68 cited pages and a rising AI Visibility Score, Innovation M Services now surfaces when IT buyers ask AI assistants about managed services, cloud solutions, and cybersecurity — a channel that will only grow in importance as B2B research behaviour shifts further into AI-first discovery.</p>
+    </div>
+    <div class="ai-score-display">
+      <div class="ai-score-num">14</div>
+      <div class="ai-score-label">AI Visibility Score</div>
+      <div class="ai-platforms">
+        <div class="ai-platform-card">
+          <div class="ai-platform-name">ChatGPT</div>
+          <div class="ai-platform-nums">
+            <div class="ai-pnum">0<span>Mentions</span></div>
+            <div class="ai-pnum">21<span>Cited Pages</span></div>
+          </div>
+        </div>
+        <div class="ai-platform-card">
+          <div class="ai-platform-name">Google AI Overview</div>
+          <div class="ai-platform-nums">
+            <div class="ai-pnum">2<span>Mentions</span></div>
+            <div class="ai-pnum">22<span>Cited Pages</span></div>
+          </div>
+        </div>
+        <div class="ai-platform-card">
+          <div class="ai-platform-name">Google AI Mode</div>
+          <div class="ai-platform-nums">
+            <div class="ai-pnum">2<span>Mentions</span></div>
+            <div class="ai-pnum">34<span>Cited Pages</span></div>
+          </div>
+        </div>
+        <div class="ai-platform-card">
+          <div class="ai-platform-name">Gemini</div>
+          <div class="ai-platform-nums">
+            <div class="ai-pnum">0<span>Mentions</span></div>
+            <div class="ai-pnum">2<span>Cited Pages</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS DEEP DIVE -->
+<section class="section metrics-section">
+  <div class="section-label">04 — Final Metrics</div>
+  <h2 class="section-heading" style="margin-bottom: 48px;">The <em>numbers</em> in full</h2>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">Organic Traffic</div>
+      <div class="metric-sub">Monthly sessions</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 70%; background: linear-gradient(90deg, var(--accent2), #5fba8a); animation-delay: 0.1s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: var(--accent2);">7K<span class="metric-sub" style="color: var(--accent2); font-size:13px;">From ~Zero</span></div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">Organic Keywords</div>
+      <div class="metric-sub">Total ranking positions</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 60%; background: linear-gradient(90deg, var(--accent), #e8745c); animation-delay: 0.2s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: var(--accent);">1.2K<span class="metric-sub" style="color: var(--accent); font-size:13px;">-0.3% MoM</span></div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">Referring Domains</div>
+      <div class="metric-sub">Unique linking domains</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 30%; background: linear-gradient(90deg, var(--gold), #e8c86c); animation-delay: 0.3s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: var(--gold);">299</div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">Total Backlinks</div>
+      <div class="metric-sub">All inbound links</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 58%; background: linear-gradient(90deg, #6a4fc7, #9b7fe8); animation-delay: 0.4s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: #6a4fc7;">5.8K</div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">Authority Score</div>
+      <div class="metric-sub">Domain authority rating</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 9%; background: linear-gradient(90deg, #0a7fcf, #4daee8); animation-delay: 0.5s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: #0a7fcf;">9<span class="metric-sub" style="color: #0a7fcf; font-size:13px;">Established</span></div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">AI Visibility</div>
+      <div class="metric-sub">Cross-platform AI score</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 14%; background: linear-gradient(90deg, var(--gold), #e8d07c); animation-delay: 0.6s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: var(--gold);">14<span class="metric-sub" style="color: var(--gold); font-size:13px;">68 Cited Pages</span></div>
+    </div>
+  </div>
+
+  <div class="metric-row fade-in">
+    <div>
+      <div class="metric-name">US Traffic Share</div>
+      <div class="metric-sub">Primary market penetration</div>
+    </div>
+    <div>
+      <div class="metric-bar-wrap">
+        <div class="metric-bar" style="width: 17%; background: linear-gradient(90deg, var(--accent), #e07855); animation-delay: 0.7s;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="metric-val" style="color: var(--accent);">17%</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <p class="quote-text">"This wasn't about running a few campaigns. It was a complete build — technical architecture, topical content authority, earned link equity, and AI search presence — all stacked on top of each other until the brand couldn't be ignored."</p>
+  <div class="quote-attr">— SEO Specialist · Full-Spectrum B2B IT Engagement Summary</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="cta-label">Ready to grow?</span>
+  <h2 class="cta-heading">Let's build your <em>authority engine</em></h2>
+  <a href="/contact" class="cta-btn">Start Your Project</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">PORTFOLIO<span>.</span></div>
+  <p>© 2026 · SEO Specialist Portfolio · All Rights Reserved</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progress-bar').style.width = (scrollTop / scrollHeight * 100) + '%';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.metric-bar').forEach(bar => {
+          bar.style.animationPlayState = 'running';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.metrics-section').forEach(el => barObserver.observe(el));
+  document.querySelectorAll('.metric-bar').forEach(bar => { bar.style.animationPlayState = 'paused'; });
+</script>
+
+</body>
+</html>
