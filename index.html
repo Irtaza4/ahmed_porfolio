@@ -321,8 +321,14 @@
             color: var(--blue);
         }
 
+        .hero-name span.hero-specialist {
+            font-size: clamp(28px, 3.2vw, 42px);
+            font-weight: 700;
+            color: #fff;
+        }
+
         .hero-role {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--text2);
             margin-bottom: 24px;
@@ -585,7 +591,7 @@
         }
 
         .section-title {
-            font-size: clamp(30px, 3.5vw, 44px);
+            font-size: clamp(26px, 3vw, 38px);
             font-weight: 800;
             color: #fff;
             letter-spacing: -0.02em;
@@ -598,7 +604,7 @@
         }
 
         .section-subtitle {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text2);
             max-width: 580px;
             margin: 0 auto;
@@ -733,7 +739,7 @@
         }
 
         .about-content h2 {
-            font-size: clamp(28px, 3vw, 40px);
+            font-size: clamp(24px, 2.8vw, 36px);
             font-weight: 800;
             color: #fff;
             letter-spacing: -0.02em;
@@ -746,7 +752,7 @@
         }
 
         .about-content p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text2);
             line-height: 1.85;
             margin-bottom: 16px;
@@ -1061,7 +1067,7 @@
         }
 
         .portfolio-info h3 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
             color: #fff;
             letter-spacing: -0.02em;
@@ -1755,14 +1761,16 @@
                     <div class="dot"></div>
                     Hello, I am
                 </div>
-                <h1 class="hero-name">Ahmed <span>Usman</span><br>SEO Specialist</h1>
+                <h1 class="hero-name">Ahmed <span>Usman</span><br><span class="hero-specialist">SEO Specialist</span>
+                </h1>
                 <div class="hero-role">
                     <span class="typed-text" id="typedText"></span><span class="cursor"></span>
                 </div>
                 <p class="hero-desc">
-                    I turn websites into organic growth engines. Full-spectrum SEO strategist specialising in technical
-                    SEO, on-page optimisation, link building, semantic authority, and AI search visibility —
-                    transforming brands from invisible to undeniable.
+                    With 6 years of hands-on experience across technical SEO, semantic authority, AI search visibility,
+                    and link building — I turn websites into revenue-generating machines through search. I've helped
+                    brands rank, get cited by AI, and dominate SERPs in competitive markets. From startups to scaling
+                    enterprises, I don't just chase rankings — I build lasting organic growth.
                 </p>
                 <div class="hero-btns">
                     <a href="#portfolio" class="btn-primary"><i class="fas fa-briefcase"></i> View Case Studies</a>
@@ -1770,7 +1778,7 @@
                 </div>
                 <div class="hero-stats">
                     <div>
-                        <div class="hero-stat-num" id="stat1">5+</div>
+                        <div class="hero-stat-num" id="stat1">12+</div>
                         <div class="hero-stat-label">Brands Scaled</div>
                     </div>
                     <div>
@@ -1828,7 +1836,7 @@
                                 <div class="about-mini-label">Backlinks Built</div>
                             </div>
                             <div class="about-mini-card">
-                                <div class="about-mini-num">34</div>
+                                <div class="about-mini-num">74</div>
                                 <div class="about-mini-label">Peak AI Score</div>
                             </div>
                         </div>
@@ -1838,16 +1846,18 @@
                 <div class="about-content reveal right">
                     <div class="section-tag">About Me</div>
                     <h2>The Strategist Behind<br>the <span>Rankings</span></h2>
-                    <p>I'm an SEO specialist who builds complete organic growth systems — not just quick wins. My
-                        approach covers everything from technical architecture and on-page intent mapping to off-page
-                        authority building and the emerging frontier of AI search visibility (GEO).</p>
-                    <p>I've helped brands across e-commerce, professional services, home services, B2B, and auto
-                        transport transform their digital presence — and I document every result transparently so
-                        clients always know exactly what's happening and why.</p>
+                    <p>I'm a Senior SEO Specialist with 6 years of experience building complete organic growth systems —
+                        not just quick wins. My approach spans technical architecture, semantic content frameworks,
+                        on-page intent mapping, entity authority building, and the emerging frontier of AI search
+                        visibility (GEO & AEO).</p>
+                    <p>I've worked with brands across USA, UK, Australia, UAE, Poland and Pakistan — from e-commerce
+                        and B2B to professional services — helping them rank, get discovered by AI, and convert organic
+                        traffic into real business revenue. Every engagement is data-driven, transparent, and built for
+                        long-term compounding results.</p>
                     <ul class="about-info-list">
                         <li><i class="fas fa-map-marker-alt"></i> <span><strong>Location:</strong> Lahore, PK</span>
                         </li>
-                        <li><i class="fas fa-briefcase"></i> <span><strong>Experience:</strong> Full-Spectrum SEO</span>
+                        <li><i class="fas fa-briefcase"></i> <span><strong>Experience:</strong> 6 years+</span>
                         </li>
                         <li><i class="fas fa-graduation-cap"></i> <span><strong>Specialty:</strong> Organic Growth & AI
                                 Visibility</span></li>
@@ -2394,7 +2404,7 @@
     <script>
         /* ── Typed text animation ── */
         const roles = [
-            'SEO Specialist',
+            'Content Strategist',
             'Organic Growth Expert',
             'Link Building Strategist',
             'AI Search Optimizer',
