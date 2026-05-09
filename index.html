@@ -1,1845 +1,2490 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmed Usman | SEO Specialist Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
 
-/* =============================================
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Usman | SEO Specialist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* =============================================
    RESET & BASE
 ============================================= */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root {
-  --bg: #0a0a0a;
-  --bg2: #111111;
-  --bg3: #161616;
-  --card: #1a1a1a;
-  --card2: #1f1f1f;
-  --blue: #4f8ef7;
-  --blue-light: #6ba3ff;
-  --blue-dark: #3a7ae8;
-  --blue-glow: rgba(79,142,247,0.15);
-  --blue-glow-strong: rgba(79,142,247,0.25);
-  --text: #e8e8e8;
-  --text2: #a0a0a0;
-  --text3: #666;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(79,142,247,0.25);
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow: 0 20px 60px rgba(0,0,0,0.5);
-  --shadow-blue: 0 8px 32px rgba(79,142,247,0.25);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+        :root {
+            --bg: #0a0a0a;
+            --bg2: #111111;
+            --bg3: #161616;
+            --card: #1a1a1a;
+            --card2: #1f1f1f;
+            --blue: #4f8ef7;
+            --blue-light: #6ba3ff;
+            --blue-dark: #3a7ae8;
+            --blue-glow: rgba(79, 142, 247, 0.15);
+            --blue-glow-strong: rgba(79, 142, 247, 0.25);
+            --text: #e8e8e8;
+            --text2: #a0a0a0;
+            --text3: #666;
+            --border: rgba(255, 255, 255, 0.07);
+            --border2: rgba(79, 142, 247, 0.25);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --shadow-blue: 0 8px 32px rgba(79, 142, 247, 0.25);
+        }
 
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-/* scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-/* =============================================
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 3px;
+        }
+
+        /* =============================================
    NAV
 ============================================= */
-#navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 18px 0;
-  background: rgba(10,10,10,0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: padding 0.3s, background 0.3s;
-}
-#navbar.scrolled {
-  padding: 12px 0;
-  background: rgba(10,10,10,0.92);
-}
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: padding 0.3s, background 0.3s;
+        }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        #navbar.scrolled {
+            padding: 12px 0;
+            background: rgba(10, 10, 10, 0.92);
+        }
 
-.nav-logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-.nav-logo span { color: var(--blue); }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text2);
-  transition: color 0.2s;
-  position: relative;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 2px;
-  background: var(--blue);
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-.nav-links a:hover { color: var(--blue); }
-.nav-links a:hover::after { width: 100%; }
-.nav-links a.active { color: var(--blue); }
-.nav-links a.active::after { width: 100%; }
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
 
-.nav-hire {
-  background: var(--blue);
-  color: #fff !important;
-  padding: 9px 22px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(79,142,247,0.3);
-}
-.nav-hire:hover {
-  background: var(--blue-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(79,142,247,0.4);
-}
-.nav-hire::after { display: none !important; }
+        .nav-logo span {
+            color: var(--blue);
+        }
 
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.hamburger span { display: block; width: 24px; height: 2px; background: var(--text2); border-radius: 2px; transition: 0.3s; }
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
 
-/* =============================================
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text2);
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blue);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-hire {
+            background: var(--blue);
+            color: #fff !important;
+            padding: 9px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(79, 142, 247, 0.3);
+        }
+
+        .nav-hire:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(79, 142, 247, 0.4);
+        }
+
+        .nav-hire::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text2);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* =============================================
    HERO
 ============================================= */
-#home {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 0 80px;
-  position: relative;
-  overflow: hidden;
-}
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* animated bg grid */
-#home::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(79,142,247,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(79,142,247,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: grid-move 20s linear infinite;
-}
-@keyframes grid-move {
-  from { background-position: 0 0; }
-  to { background-position: 60px 60px; }
-}
+        /* animated bg grid */
+        #home::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(79, 142, 247, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 142, 247, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: grid-move 20s linear infinite;
+        }
 
-/* glow orbs */
-#home::after {
-  content: '';
-  position: absolute;
-  top: 10%; right: 5%;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(79,142,247,0.06) 0%, transparent 70%);
-  pointer-events: none;
-  border-radius: 50%;
-  animation: orb-float 8s ease-in-out infinite alternate;
-}
-@keyframes orb-float {
-  from { transform: translate(0,0) scale(1); }
-  to { transform: translate(-20px, 20px) scale(1.05); }
-}
+        @keyframes grid-move {
+            from {
+                background-position: 0 0;
+            }
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
+            to {
+                background-position: 60px 60px;
+            }
+        }
 
-.hero-greeting {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  color: var(--blue-light);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 8px 18px;
-  border-radius: 50px;
-  margin-bottom: 24px;
-  letter-spacing: 0.02em;
-}
-.hero-greeting .dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 8px var(--blue);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.5; transform:scale(0.8); }
-}
+        /* glow orbs */
+        #home::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(79, 142, 247, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation: orb-float 8s ease-in-out infinite alternate;
+        }
 
-.hero-name {
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-  color: #fff;
-}
-.hero-name span { color: var(--blue); }
+        @keyframes orb-float {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
 
-.hero-role {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text2);
-  margin-bottom: 24px;
-  min-height: 32px;
-}
-.hero-role .typed-text { color: var(--blue-light); }
-.hero-role .cursor {
-  display: inline-block;
-  width: 2px; height: 22px;
-  background: var(--blue);
-  margin-left: 3px;
-  vertical-align: middle;
-  animation: blink 0.8s step-end infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+            to {
+                transform: translate(-20px, 20px) scale(1.05);
+            }
+        }
 
-.hero-desc {
-  font-size: 15px;
-  color: var(--text2);
-  line-height: 1.8;
-  margin-bottom: 40px;
-  max-width: 500px;
-}
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
 
-.hero-btns {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--blue);
-  color: #fff;
-  padding: 13px 28px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: var(--shadow-blue);
-}
-.btn-primary:hover { background: var(--blue-dark); transform: translateY(-3px); box-shadow: 0 12px 36px rgba(79,142,247,0.4); }
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--text);
-  padding: 13px 28px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  border: 1.5px solid var(--border2);
-  transition: border-color 0.2s, color 0.2s, transform 0.2s;
-}
-.btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-3px); }
+        .hero-greeting {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            color: var(--blue-light);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
 
-.hero-stats {
-  display: flex;
-  gap: 32px;
-  margin-top: 48px;
-  padding-top: 36px;
-  border-top: 1px solid var(--border);
-}
-.hero-stat-num {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--blue);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.hero-stat-label {
-  font-size: 12px;
-  color: var(--text3);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
+        .hero-greeting .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 8px var(--blue);
+            animation: pulse 2s ease-in-out infinite;
+        }
 
-/* Hero Image / Visual */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.hero-img-wrap {
-  width: 340px; height: 340px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(79,142,247,0.04));
-  border: 2px solid rgba(79,142,247,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: float 5s ease-in-out infinite;
-}
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-.hero-img-wrap::before {
-  content: '';
-  position: absolute; inset: -12px;
-  border-radius: 50%;
-  border: 1px dashed rgba(79,142,247,0.2);
-  animation: spin-slow 20s linear infinite;
-}
-.hero-img-wrap::after {
-  content: '';
-  position: absolute; inset: -28px;
-  border-radius: 50%;
-  border: 1px dashed rgba(79,142,247,0.1);
-  animation: spin-slow 30s linear infinite reverse;
-}
-@keyframes spin-slow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+        @keyframes pulse {
 
-.hero-icon-center {
-  width: 160px; height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  background: linear-gradient(135deg, rgba(79,142,247,0.1), rgba(79,142,247,0.03));
-  border-radius: 50%;
-  border: 1px solid rgba(79,142,247,0.15);
-}
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
 
-/* floating badges around circle */
-.hero-badge {
-  position: absolute;
-  background: var(--card2);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius-sm);
-  padding: 10px 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-  animation: float 5s ease-in-out infinite;
-}
-.hero-badge i { color: var(--blue); font-size: 14px; }
-.hero-badge.b1 { top: 30px; right: -40px; animation-delay: 0.5s; }
-.hero-badge.b2 { bottom: 60px; right: -50px; animation-delay: 1s; }
-.hero-badge.b3 { bottom: 30px; left: -30px; animation-delay: 1.5s; }
-.hero-badge.b4 { top: 60px; left: -50px; animation-delay: 2s; }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
 
-/* =============================================
+        .hero-name {
+            font-size: clamp(38px, 4.5vw, 60px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .hero-name span {
+            color: var(--blue);
+        }
+
+        .hero-role {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text2);
+            margin-bottom: 24px;
+            min-height: 32px;
+        }
+
+        .hero-role .typed-text {
+            color: var(--blue-light);
+        }
+
+        .hero-role .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 22px;
+            background: var(--blue);
+            margin-left: 3px;
+            vertical-align: middle;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--blue);
+            color: #fff;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(79, 142, 247, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text);
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1.5px solid var(--border2);
+            transition: border-color 0.2s, color 0.2s, transform 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 36px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hero-stat-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 12px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* Hero Image / Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-img-wrap {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(79, 142, 247, 0.15), rgba(79, 142, 247, 0.04));
+            border: 2px solid rgba(79, 142, 247, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        .hero-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 1px dashed rgba(79, 142, 247, 0.2);
+            animation: spin-slow 20s linear infinite;
+        }
+
+        .hero-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -28px;
+            border-radius: 50%;
+            border: 1px dashed rgba(79, 142, 247, 0.1);
+            animation: spin-slow 30s linear infinite reverse;
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-icon-center {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            background: linear-gradient(135deg, rgba(79, 142, 247, 0.1), rgba(79, 142, 247, 0.03));
+            border-radius: 50%;
+            border: 1px solid rgba(79, 142, 247, 0.15);
+        }
+
+        /* floating badges around circle */
+        .hero-badge {
+            position: absolute;
+            background: var(--card2);
+            border: 1px solid var(--border2);
+            border-radius: var(--radius-sm);
+            padding: 11px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            white-space: nowrap;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero-badge i {
+            color: var(--blue);
+            font-size: 14px;
+        }
+
+        .hero-badge.b1 {
+            top: 30px;
+            right: -40px;
+            animation-delay: 0.5s;
+        }
+
+        .hero-badge.b2 {
+            bottom: 60px;
+            right: -50px;
+            animation-delay: 1s;
+        }
+
+        .hero-badge.b3 {
+            bottom: 30px;
+            left: -30px;
+            animation-delay: 1.5s;
+        }
+
+        .hero-badge.b4 {
+            top: 60px;
+            left: -50px;
+            animation-delay: 2s;
+        }
+
+        /* =============================================
    SECTION COMMON
 ============================================= */
-section { padding: 100px 0; }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.section-title-wrap { text-align: center; margin-bottom: 64px; }
-.section-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue);
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  padding: 5px 16px;
-  border-radius: 50px;
-  margin-bottom: 16px;
-}
-.section-title {
-  font-size: clamp(30px, 3.5vw, 44px);
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-.section-title span { color: var(--blue); }
-.section-subtitle {
-  font-size: 15px;
-  color: var(--text2);
-  max-width: 580px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
+        section {
+            padding: 100px 0;
+        }
 
-/* divider line under section tag */
-.section-line {
-  display: inline-block;
-  width: 50px; height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--blue-light));
-  border-radius: 2px;
-  margin: 0 auto 12px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
 
-/* =============================================
+        .section-title-wrap {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 3.5vw, 44px);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text2);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* divider line under section tag */
+        .section-line {
+            display: inline-block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--blue-light));
+            border-radius: 2px;
+            margin: 0 auto 12px;
+        }
+
+        /* =============================================
    ABOUT
 ============================================= */
-#about { background: var(--bg2); }
+        #about {
+            background: var(--bg2);
+        }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.about-visual-wrap {
-  position: relative;
-}
-.about-card-main {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.about-card-main::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--blue-light));
-}
-.about-card-main::after {
-  content: '';
-  position: absolute;
-  bottom: -60px; right: -60px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(79,142,247,0.08), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.about-icon-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-.about-icon-box {
-  width: 52px; height: 52px;
-  border-radius: var(--radius-sm);
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-.about-card-main h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 12px;
-}
-.about-card-main p {
-  font-size: 14px;
-  color: var(--text2);
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
 
-.about-mini-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 24px;
-}
-.about-mini-card {
-  background: rgba(79,142,247,0.06);
-  border: 1px solid rgba(79,142,247,0.15);
-  border-radius: var(--radius-sm);
-  padding: 18px;
-  text-align: center;
-  transition: background 0.2s, transform 0.2s;
-}
-.about-mini-card:hover { background: rgba(79,142,247,0.12); transform: translateY(-3px); }
-.about-mini-num {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--blue);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.about-mini-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+        .about-visual-wrap {
+            position: relative;
+        }
 
-.about-content h2 {
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-.about-content h2 span { color: var(--blue); }
-.about-content p {
-  font-size: 15px;
-  color: var(--text2);
-  line-height: 1.85;
-  margin-bottom: 16px;
-}
-.about-info-list { margin: 28px 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.about-info-list li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 14px;
-  color: var(--text2);
-}
-.about-info-list li i { color: var(--blue); width: 16px; flex-shrink: 0; }
-.about-info-list strong { color: var(--text); }
+        .about-card-main {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* =============================================
+        .about-card-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), var(--blue-light));
+        }
+
+        .about-card-main::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(79, 142, 247, 0.08), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .about-icon-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .about-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-sm);
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .about-card-main h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .about-card-main p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-mini-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .about-mini-card {
+            background: rgba(79, 142, 247, 0.06);
+            border: 1px solid rgba(79, 142, 247, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            text-align: center;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .about-mini-card:hover {
+            background: rgba(79, 142, 247, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .about-mini-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .about-mini-label {
+            font-size: 11px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .about-content h2 {
+            font-size: clamp(28px, 3vw, 40px);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--blue);
+        }
+
+        .about-content p {
+            font-size: 15px;
+            color: var(--text2);
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .about-info-list {
+            margin: 28px 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .about-info-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            color: var(--text2);
+        }
+
+        .about-info-list li i {
+            color: var(--blue);
+            width: 16px;
+            flex-shrink: 0;
+        }
+
+        .about-info-list strong {
+            color: var(--text);
+        }
+
+        /* =============================================
    EXPERIENCE / SERVICES
 ============================================= */
-#services { background: var(--bg); }
+        #services {
+            background: var(--bg);
+        }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 32px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  cursor: default;
-}
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(79,142,247,0.3);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(79,142,247,0.1);
-}
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 0;
-  background: linear-gradient(90deg, var(--blue), var(--blue-light));
-  transition: height 0.3s;
-  border-radius: var(--radius) var(--radius) 0 0;
-}
-.service-card:hover::before { height: 3px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-.service-icon {
-  width: 58px; height: 58px;
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 24px;
-  transition: background 0.3s;
-}
-.service-card:hover .service-icon { background: rgba(79,142,247,0.18); }
-.service-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-.service-card p { font-size: 13px; color: var(--text2); line-height: 1.75; margin-bottom: 20px; }
-.service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.service-tag {
-  font-size: 11px;
-  color: var(--blue-light);
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.15);
-  padding: 3px 10px;
-  border-radius: 50px;
-}
+        .service-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: default;
+        }
 
-/* =============================================
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(79, 142, 247, 0.3);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(79, 142, 247, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(90deg, var(--blue), var(--blue-light));
+            transition: height 0.3s;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+
+        .service-card:hover::before {
+            height: 3px;
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+            transition: background 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(79, 142, 247, 0.18);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .service-tag {
+            font-size: 11px;
+            color: var(--blue-light);
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.15);
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        /* =============================================
    CASE STUDIES / PROJECTS
 ============================================= */
-#portfolio { background: var(--bg2); }
+        #portfolio {
+            background: var(--bg2);
+        }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
 
-/* Featured full-width card */
-.portfolio-item-featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-.portfolio-item-featured:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,142,247,0.2);
-  border-color: rgba(79,142,247,0.3);
-}
+        /* Featured full-width card */
+        .portfolio-item-featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
 
-.portfolio-thumb {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--bg3), #0d1520);
-  min-height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.portfolio-thumb-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 40px;
-  text-align: center;
-}
-.portfolio-thumb::before {
-  content: '';
-  position: absolute; inset: 0;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.portfolio-item-featured:hover .portfolio-thumb::before { opacity: 1; }
+        .portfolio-item-featured:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 142, 247, 0.2);
+            border-color: rgba(79, 142, 247, 0.3);
+        }
 
-/* colour per card */
-.thumb-blue { background: linear-gradient(135deg, #0d1a3a, #0a1225); }
-.thumb-blue .portfolio-thumb::before { background: radial-gradient(circle at 50% 50%, rgba(79,142,247,0.12), transparent 70%); }
-.thumb-purple { background: linear-gradient(135deg, #120d2a, #0d0a1e); }
-.thumb-purple .portfolio-thumb::before { background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.12), transparent 70%); }
-.thumb-teal { background: linear-gradient(135deg, #0a1f1a, #0a1512); }
-.thumb-teal .portfolio-thumb::before { background: radial-gradient(circle at 50% 50%, rgba(20,184,166,0.12), transparent 70%); }
-.thumb-orange { background: linear-gradient(135deg, #1a110a, #120d06); }
-.thumb-orange .portfolio-thumb::before { background: radial-gradient(circle at 50% 50%, rgba(234,88,12,0.12), transparent 70%); }
-.thumb-green { background: linear-gradient(135deg, #091a0e, #071209); }
-.thumb-green .portfolio-thumb::before { background: radial-gradient(circle at 50% 50%, rgba(22,163,74,0.12), transparent 70%); }
+        .portfolio-thumb {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg3), #0d1520);
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.thumb-emoji { font-size: 56px; line-height: 1; }
-.thumb-cs-num {
-  font-size: 80px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  position: absolute;
-  bottom: -10px; right: 20px;
-  font-family: 'Poppins', sans-serif;
-  pointer-events: none;
-}
-.thumb-metrics {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  margin-top: 8px;
-}
-.thumb-metric {
-  text-align: center;
-}
-.thumb-metric-num {
-  font-size: 24px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-.thumb-metric-label {
-  font-size: 10px;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
+        .portfolio-thumb-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 40px;
+            text-align: center;
+        }
 
-.portfolio-info {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: var(--card);
-}
-.portfolio-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-.portfolio-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--blue-light);
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  padding: 4px 12px;
-  border-radius: 50px;
-}
-.portfolio-duration {
-  font-size: 12px;
-  color: var(--text3);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.portfolio-duration i { font-size: 10px; }
+        .portfolio-thumb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
 
-.portfolio-info h3 {
-  font-size: 26px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.portfolio-info h3 em { font-style: italic; color: var(--blue-light); }
-.portfolio-info p {
-  font-size: 14px;
-  color: var(--text2);
-  line-height: 1.8;
-  margin-bottom: 28px;
-  flex: 1;
-}
+        .portfolio-item-featured:hover .portfolio-thumb::before {
+            opacity: 1;
+        }
 
-.portfolio-stats-row {
-  display: flex;
-  gap: 20px;
-  padding: 20px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-.portfolio-stat {}
-.portfolio-stat-num {
-  font-size: 22px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-.portfolio-stat-num.c-blue { color: var(--blue-light); }
-.portfolio-stat-num.c-green { color: #34d399; }
-.portfolio-stat-num.c-gold { color: #fbbf24; }
-.portfolio-stat-num.c-purple { color: #a78bfa; }
-.portfolio-stat-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.07em; }
+        /* colour per card */
+        .thumb-blue {
+            background: linear-gradient(135deg, #0d1a3a, #0a1225);
+        }
 
-.portfolio-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--blue);
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  align-self: flex-start;
-  box-shadow: 0 4px 16px rgba(79,142,247,0.3);
-}
-.portfolio-link:hover {
-  background: var(--blue-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(79,142,247,0.4);
-}
-.portfolio-link i { font-size: 12px; transition: transform 0.2s; }
-.portfolio-link:hover i { transform: translateX(4px); }
+        .thumb-blue .portfolio-thumb::before {
+            background: radial-gradient(circle at 50% 50%, rgba(79, 142, 247, 0.12), transparent 70%);
+        }
 
-/* Standard portfolio cards */
-.portfolio-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-.portfolio-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,142,247,0.15);
-  border-color: rgba(79,142,247,0.25);
-}
-.portfolio-item .portfolio-thumb { min-height: 200px; }
-.portfolio-item .portfolio-thumb-inner { padding: 28px; }
-.portfolio-item .thumb-emoji { font-size: 40px; }
-.portfolio-item .thumb-metrics { gap: 16px; }
-.portfolio-item .thumb-metric-num { font-size: 20px; }
-.portfolio-item .thumb-cs-num { font-size: 60px; }
+        .thumb-purple {
+            background: linear-gradient(135deg, #120d2a, #0d0a1e);
+        }
 
-.portfolio-item .portfolio-info {
-  padding: 28px;
-  flex: 1;
-}
-.portfolio-item .portfolio-info h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-.portfolio-item .portfolio-info p {
-  font-size: 13px;
-  margin-bottom: 20px;
-  -webkit-line-clamp: 3;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.portfolio-item .portfolio-stats-row {
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.portfolio-item .portfolio-stat-num { font-size: 18px; }
-.portfolio-item .portfolio-link {
-  width: 100%;
-  justify-content: center;
-  margin-top: auto;
-}
+        .thumb-purple .portfolio-thumb::before {
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.12), transparent 70%);
+        }
 
-/* =============================================
+        .thumb-teal {
+            background: linear-gradient(135deg, #0a1f1a, #0a1512);
+        }
+
+        .thumb-teal .portfolio-thumb::before {
+            background: radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.12), transparent 70%);
+        }
+
+        .thumb-orange {
+            background: linear-gradient(135deg, #1a110a, #120d06);
+        }
+
+        .thumb-orange .portfolio-thumb::before {
+            background: radial-gradient(circle at 50% 50%, rgba(234, 88, 12, 0.12), transparent 70%);
+        }
+
+        .thumb-green {
+            background: linear-gradient(135deg, #091a0e, #071209);
+        }
+
+        .thumb-green .portfolio-thumb::before {
+            background: radial-gradient(circle at 50% 50%, rgba(22, 163, 74, 0.12), transparent 70%);
+        }
+
+        .thumb-emoji {
+            font-size: 56px;
+            line-height: 1;
+        }
+
+        .thumb-cs-num {
+            font-size: 80px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.04);
+            line-height: 1;
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            font-family: 'Poppins', sans-serif;
+            pointer-events: none;
+        }
+
+        .thumb-metrics {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .thumb-metric {
+            text-align: center;
+        }
+
+        .thumb-metric-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .thumb-metric-label {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .portfolio-info {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--card);
+        }
+
+        .portfolio-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .portfolio-duration {
+            font-size: 12px;
+            color: var(--text3);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .portfolio-duration i {
+            font-size: 10px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .portfolio-info h3 em {
+            font-style: italic;
+            color: var(--blue-light);
+        }
+
+        .portfolio-info p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            flex: 1;
+        }
+
+        .portfolio-stats-row {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-stat {}
+
+        .portfolio-stat-num {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 3px;
+        }
+
+        .portfolio-stat-num.c-blue {
+            color: var(--blue-light);
+        }
+
+        .portfolio-stat-num.c-green {
+            color: #34d399;
+        }
+
+        .portfolio-stat-num.c-gold {
+            color: #fbbf24;
+        }
+
+        .portfolio-stat-num.c-purple {
+            color: #a78bfa;
+        }
+
+        .portfolio-stat-label {
+            font-size: 10px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--blue);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            align-self: flex-start;
+            box-shadow: 0 4px 16px rgba(79, 142, 247, 0.3);
+        }
+
+        .portfolio-link:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(79, 142, 247, 0.4);
+        }
+
+        .portfolio-link i {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .portfolio-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Standard portfolio cards */
+        .portfolio-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(79, 142, 247, 0.15);
+            border-color: rgba(79, 142, 247, 0.25);
+        }
+
+        .portfolio-item .portfolio-thumb {
+            min-height: 200px;
+        }
+
+        .portfolio-item .portfolio-thumb-inner {
+            padding: 28px;
+        }
+
+        .portfolio-item .thumb-emoji {
+            font-size: 40px;
+        }
+
+        .portfolio-item .thumb-metrics {
+            gap: 16px;
+        }
+
+        .portfolio-item .thumb-metric-num {
+            font-size: 20px;
+        }
+
+        .portfolio-item .thumb-cs-num {
+            font-size: 60px;
+        }
+
+        .portfolio-item .portfolio-info {
+            padding: 28px;
+            flex: 1;
+        }
+
+        .portfolio-item .portfolio-info h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item .portfolio-info p {
+            font-size: 13px;
+            margin-bottom: 20px;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .portfolio-item .portfolio-stats-row {
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-item .portfolio-stat-num {
+            font-size: 18px;
+        }
+
+        .portfolio-item .portfolio-link {
+            width: 100%;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        /* =============================================
    SKILLS
 ============================================= */
-#skills { background: var(--bg); }
+        #skills {
+            background: var(--bg);
+        }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-.skill-category {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.skill-category:hover {
-  border-color: rgba(79,142,247,0.25);
-  transform: translateY(-4px);
-}
-.skill-cat-icon {
-  width: 48px; height: 48px;
-  background: rgba(79,142,247,0.1);
-  border: 1px solid rgba(79,142,247,0.2);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.skill-cat-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 16px;
-}
-.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-tag {
-  font-size: 12px;
-  color: var(--text2);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  padding: 5px 12px;
-  border-radius: 50px;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-.skill-tag:hover {
-  color: var(--blue-light);
-  border-color: rgba(79,142,247,0.3);
-  background: rgba(79,142,247,0.08);
-}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
 
-/* =============================================
+        .skill-category {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: rgba(79, 142, 247, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .skill-cat-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(79, 142, 247, 0.1);
+            border: 1px solid rgba(79, 142, 247, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-cat-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            font-size: 12px;
+            color: var(--text2);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 5px 12px;
+            border-radius: 50px;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .skill-tag:hover {
+            color: var(--blue-light);
+            border-color: rgba(79, 142, 247, 0.3);
+            background: rgba(79, 142, 247, 0.08);
+        }
+
+        /* =============================================
    CONTACT
 ============================================= */
-#contact { background: var(--bg2); }
+        #contact {
+            background: var(--bg2);
+        }
 
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.contact-info h2 {
-  font-size: 36px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-.contact-info h2 span { color: var(--blue); }
-.contact-info p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 32px; }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
 
-.contact-items { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.2s, transform 0.2s;
-}
-.contact-item:hover { border-color: rgba(79,142,247,0.3); transform: translateX(4px); }
-.contact-item-icon {
-  width: 44px; height: 44px;
-  background: rgba(79,142,247,0.1);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue);
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.contact-item-text label { display: block; font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
-.contact-item-text span { font-size: 15px; color: var(--text); font-weight: 500; }
+        .contact-info h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
 
-.social-links { display: flex; gap: 14px; }
-.social-link {
-  width: 44px; height: 44px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text2);
-  font-size: 18px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
-}
-.social-link:hover {
-  background: var(--blue);
-  color: #fff;
-  border-color: var(--blue);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(79,142,247,0.35);
-}
+        .contact-info h2 span {
+            color: var(--blue);
+        }
 
-.contact-form {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 40px;
-}
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 8px; }
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 13px 16px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  resize: vertical;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: rgba(79,142,247,0.5);
-  box-shadow: 0 0 0 3px rgba(79,142,247,0.08);
-}
-.form-group textarea { min-height: 120px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-submit {
-  width: 100%;
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 50px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: var(--shadow-blue);
-}
-.form-submit:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(79,142,247,0.4); }
+        .contact-info p {
+            font-size: 15px;
+            color: var(--text2);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
 
-/* =============================================
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(79, 142, 247, 0.3);
+            transform: translateX(4px);
+        }
+
+        .contact-item-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(79, 142, 247, 0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text label {
+            display: block;
+            font-size: 11px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 3px;
+        }
+
+        .contact-item-text span {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text2);
+            font-size: 18px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+
+        .social-link:hover {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(79, 142, 247, 0.35);
+        }
+
+        .contact-form {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text2);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 13px 16px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: rgba(79, 142, 247, 0.5);
+            box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow-blue);
+        }
+
+        .form-submit:hover {
+            background: var(--blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(79, 142, 247, 0.4);
+        }
+
+        /* =============================================
    FOOTER
 ============================================= */
-footer {
-  background: #070707;
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
-  text-align: center;
-}
-footer p { font-size: 13px; color: var(--text3); }
-footer span { color: var(--blue); }
+        footer {
+            background: #070707;
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+        }
 
-/* =============================================
+        footer p {
+            font-size: 13px;
+            color: var(--text3);
+        }
+
+        footer span {
+            color: var(--blue);
+        }
+
+        /* =============================================
    ANIMATIONS / SCROLL REVEAL
 ============================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.up { transform: translateY(32px); }
-.reveal.left { transform: translateX(-32px); }
-.reveal.right { transform: translateX(32px); }
-.reveal.visible { opacity: 1; transform: translate(0); }
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
 
-/* =============================================
+        .reveal.up {
+            transform: translateY(32px);
+        }
+
+        .reveal.left {
+            transform: translateX(-32px);
+        }
+
+        .reveal.right {
+            transform: translateX(32px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        .delay-6 {
+            transition-delay: 0.6s;
+        }
+
+        /* =============================================
    MOBILE MENU
 ============================================= */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10,10,10,0.98);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 24px; font-weight: 700; color: var(--text); transition: color 0.2s; }
-.mobile-menu a:hover { color: var(--blue); }
-.mobile-menu-close {
-  position: absolute;
-  top: 24px; right: 32px;
-  font-size: 28px;
-  color: var(--text2);
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
 
-/* =============================================
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--blue);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 28px;
+            color: var(--text2);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* =============================================
    RESPONSIVE
 ============================================= */
-@media (max-width: 1024px) {
-  .hero-container { grid-template-columns: 1fr; text-align: center; }
-  .hero-desc { max-width: 600px; margin-left: auto; margin-right: auto; }
-  .hero-btns { justify-content: center; }
-  .hero-stats { justify-content: center; }
-  .hero-visual { display: none; }
-  .about-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .portfolio-item-featured { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
-  .skills-grid { grid-template-columns: 1fr 1fr; }
-  .contact-wrapper { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .nav-links, .nav-hire { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 70px 0; }
-  .container { padding: 0 20px; }
-  .nav-container { padding: 0 20px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .hero-stats { flex-wrap: wrap; gap: 20px; }
-  .about-mini-cards { grid-template-columns: 1fr 1fr; }
-  .portfolio-item-featured { grid-column: auto; }
-}
-@media (max-width: 480px) {
-  .skills-grid { grid-template-columns: 1fr; }
-  .hero-name { font-size: 36px; }
-  .contact-form { padding: 24px; }
-}
-</style>
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-desc {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portfolio-item-featured {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-hire {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .about-mini-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portfolio-item-featured {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-name {
+                font-size: 36px;
+            }
+
+            .contact-form {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" id="menuClose"><i class="fas fa-times"></i></button>
-  <a href="#home" onclick="closeMobileMenu()">Home</a>
-  <a href="#about" onclick="closeMobileMenu()">About</a>
-  <a href="#services" onclick="closeMobileMenu()">Services</a>
-  <a href="#portfolio" onclick="closeMobileMenu()">Case Studies</a>
-  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
-  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
-</div>
-
-<!-- ═══════════════ NAV ═══════════════ -->
-<nav id="navbar">
-  <div class="nav-container">
-    <a href="#home" class="nav-logo">Ahmed<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Case Studies</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-hire">Hire Me</a>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- ═══════════════ HERO ═══════════════ -->
-<section id="home">
-  <div class="hero-container">
-    <div class="hero-content">
-      <div class="hero-greeting">
-        <div class="dot"></div>
-        Hello, I am
-      </div>
-      <h1 class="hero-name">Ahmed <span>Usman</span><br>SEO Specialist</h1>
-      <div class="hero-role">
-        <span class="typed-text" id="typedText"></span><span class="cursor"></span>
-      </div>
-      <p class="hero-desc">
-        I turn websites into organic growth engines. Full-spectrum SEO strategist specialising in technical SEO, on-page optimisation, link building, semantic authority, and AI search visibility — transforming brands from invisible to undeniable.
-      </p>
-      <div class="hero-btns">
-        <a href="#portfolio" class="btn-primary"><i class="fas fa-briefcase"></i> View Case Studies</a>
-        <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Let's Talk</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num" id="stat1">5+</div>
-          <div class="hero-stat-label">Brands Scaled</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" id="stat2">75K+</div>
-          <div class="hero-stat-label">Monthly Sessions</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" id="stat3">30K+</div>
-          <div class="hero-stat-label">Keywords Ranked</div>
-        </div>
-      </div>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+        <a href="#home" onclick="closeMobileMenu()">Home</a>
+        <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#services" onclick="closeMobileMenu()">Services</a>
+        <a href="#portfolio" onclick="closeMobileMenu()">Case Studies</a>
+        <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
     </div>
 
-    <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <div class="hero-icon-center" style="overflow:hidden;"><img src="images/ahmed.png" alt="Ahmed Usman" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
-        <div class="hero-badge b1"><i class="fas fa-chart-line"></i> +2.1% MoM Traffic</div>
-        <div class="hero-badge b2"><i class="fas fa-robot"></i> AI Visibility: 34</div>
-        <div class="hero-badge b3"><i class="fas fa-link"></i> 10K+ Backlinks</div>
-        <div class="hero-badge b4"><i class="fas fa-key"></i> 30K+ Keywords</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Ahmed<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Case Studies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-hire">Hire Me</a>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
 
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-greeting">
+                    <div class="dot"></div>
+                    Hello, I am
+                </div>
+                <h1 class="hero-name">Ahmed <span>Usman</span><br>SEO Specialist</h1>
+                <div class="hero-role">
+                    <span class="typed-text" id="typedText"></span><span class="cursor"></span>
+                </div>
+                <p class="hero-desc">
+                    I turn websites into organic growth engines. Full-spectrum SEO strategist specialising in technical
+                    SEO, on-page optimisation, link building, semantic authority, and AI search visibility —
+                    transforming brands from invisible to undeniable.
+                </p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn-primary"><i class="fas fa-briefcase"></i> View Case Studies</a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Let's Talk</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num" id="stat1">5+</div>
+                        <div class="hero-stat-label">Brands Scaled</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num" id="stat2">75K+</div>
+                        <div class="hero-stat-label">Monthly Sessions</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num" id="stat3">30K+</div>
+                        <div class="hero-stat-label">Keywords Ranked</div>
+                    </div>
+                </div>
+            </div>
 
-      <div class="about-visual-wrap reveal left">
-        <div class="about-card-main">
-          <div class="about-icon-row">
-            <div class="about-icon-box">🔍</div>
-            <div class="about-icon-box">📈</div>
-            <div class="about-icon-box">🤖</div>
-          </div>
-          <h3>Turning Searches Into Revenue</h3>
-          <p>I build complete organic growth systems — from technical foundations to AI search presence — that compound in value every single month.</p>
-          <p>Every engagement is data-driven, fully transparent, and documented with real numbers. No vanity metrics. Just rankings, traffic, and business results.</p>
-          <div class="about-mini-cards">
-            <div class="about-mini-card">
-              <div class="about-mini-num">75K+</div>
-              <div class="about-mini-label">Monthly Sessions</div>
+            <div class="hero-visual">
+                <div class="hero-img-wrap">
+                    <div class="hero-icon-center" style="overflow:hidden;"><img src="images/ahmed.png" alt="Ahmed Usman"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
+                    <div class="hero-badge b1"><i class="fas fa-chart-line"></i> +80% MoM Traffic</div>
+                    <div class="hero-badge b2"><i class="fas fa-robot"></i> AI Visibility: 74</div>
+                    <div class="hero-badge b3"><i class="fas fa-link"></i> 10K+ Backlinks</div>
+                    <div class="hero-badge b4"><i class="fas fa-key"></i> 30K+ Keywords</div>
+                </div>
             </div>
-            <div class="about-mini-card">
-              <div class="about-mini-num">30K+</div>
-              <div class="about-mini-label">Keywords Ranked</div>
-            </div>
-            <div class="about-mini-card">
-              <div class="about-mini-num">10K+</div>
-              <div class="about-mini-label">Backlinks Built</div>
-            </div>
-            <div class="about-mini-card">
-              <div class="about-mini-num">34</div>
-              <div class="about-mini-label">Peak AI Score</div>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <div class="about-content reveal right">
-        <div class="section-tag">About Me</div>
-        <h2>The Strategist Behind<br>the <span>Rankings</span></h2>
-        <p>I'm an SEO specialist who builds complete organic growth systems — not just quick wins. My approach covers everything from technical architecture and on-page intent mapping to off-page authority building and the emerging frontier of AI search visibility (GEO).</p>
-        <p>I've helped brands across e-commerce, professional services, home services, B2B, and auto transport transform their digital presence — and I document every result transparently so clients always know exactly what's happening and why.</p>
-        <ul class="about-info-list">
-          <li><i class="fas fa-map-marker-alt"></i> <span><strong>Location:</strong> Lahore, PK</span></li>
-          <li><i class="fas fa-briefcase"></i> <span><strong>Experience:</strong> Full-Spectrum SEO</span></li>
-          <li><i class="fas fa-graduation-cap"></i> <span><strong>Specialty:</strong> Organic Growth & AI Visibility</span></li>
-          <li><i class="fas fa-check-circle"></i> <span><strong>Status:</strong> Available for New Projects</span></li>
-        </ul>
-        <a href="#contact" class="btn-primary" style="display:inline-flex;">
-          <i class="fas fa-paper-plane"></i> Get In Touch
-        </a>
-      </div>
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
 
-    </div>
-  </div>
-</section>
+                <div class="about-visual-wrap reveal left">
+                    <div class="about-card-main">
+                        <div class="about-icon-row">
+                            <div class="about-icon-box">🔍</div>
+                            <div class="about-icon-box">📈</div>
+                            <div class="about-icon-box">🤖</div>
+                        </div>
+                        <h3>Turning Searches Into Revenue</h3>
+                        <p>I build complete organic growth systems — from technical foundations to AI search presence —
+                            that compound in value every single month.</p>
+                        <p>Every engagement is data-driven, fully transparent, and documented with real numbers. No
+                            vanity metrics. Just rankings, traffic, and business results.</p>
+                        <div class="about-mini-cards">
+                            <div class="about-mini-card">
+                                <div class="about-mini-num">75K+</div>
+                                <div class="about-mini-label">Monthly Sessions</div>
+                            </div>
+                            <div class="about-mini-card">
+                                <div class="about-mini-num">30K+</div>
+                                <div class="about-mini-label">Keywords Ranked</div>
+                            </div>
+                            <div class="about-mini-card">
+                                <div class="about-mini-num">10K+</div>
+                                <div class="about-mini-label">Backlinks Built</div>
+                            </div>
+                            <div class="about-mini-card">
+                                <div class="about-mini-num">34</div>
+                                <div class="about-mini-label">Peak AI Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- ═══════════════ SERVICES ═══════════════ -->
-<section id="services">
-  <div class="container">
-    <div class="section-title-wrap">
-      <div class="section-tag reveal">What I Do</div>
-      <div class="section-line reveal"></div>
-      <h2 class="section-title reveal">My <span>SEO Services</span></h2>
-      <p class="section-subtitle reveal">Six disciplines. One unified system. Each layer compounds the others for results that grow month over month.</p>
-    </div>
+                <div class="about-content reveal right">
+                    <div class="section-tag">About Me</div>
+                    <h2>The Strategist Behind<br>the <span>Rankings</span></h2>
+                    <p>I'm an SEO specialist who builds complete organic growth systems — not just quick wins. My
+                        approach covers everything from technical architecture and on-page intent mapping to off-page
+                        authority building and the emerging frontier of AI search visibility (GEO).</p>
+                    <p>I've helped brands across e-commerce, professional services, home services, B2B, and auto
+                        transport transform their digital presence — and I document every result transparently so
+                        clients always know exactly what's happening and why.</p>
+                    <ul class="about-info-list">
+                        <li><i class="fas fa-map-marker-alt"></i> <span><strong>Location:</strong> Lahore, PK</span>
+                        </li>
+                        <li><i class="fas fa-briefcase"></i> <span><strong>Experience:</strong> Full-Spectrum SEO</span>
+                        </li>
+                        <li><i class="fas fa-graduation-cap"></i> <span><strong>Specialty:</strong> Organic Growth & AI
+                                Visibility</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span><strong>Status:</strong> Available for New
+                                Projects</span></li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="display:inline-flex;">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                </div>
 
-    <div class="services-grid">
-      <div class="service-card reveal delay-1">
-        <div class="service-icon">⚙️</div>
-        <h3>Technical SEO</h3>
-        <p>Full site audits, Core Web Vitals, crawl architecture, schema markup — everything under the hood that determines whether Google can and will rank your pages.</p>
-        <div class="service-tags">
-          <span class="service-tag">Site Audit</span>
-          <span class="service-tag">CWV</span>
-          <span class="service-tag">Schema</span>
-          <span class="service-tag">Crawl Budget</span>
+            </div>
         </div>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon">🎯</div>
-        <h3>On-Page SEO</h3>
-        <p>Intent-driven keyword mapping, meta architecture, content optimisation, E-E-A-T signals, and internal linking structures designed to capture every opportunity.</p>
-        <div class="service-tags">
-          <span class="service-tag">Keyword Mapping</span>
-          <span class="service-tag">E-E-A-T</span>
-          <span class="service-tag">Internal Links</span>
-        </div>
-      </div>
-      <div class="service-card reveal delay-3">
-        <div class="service-icon">🌐</div>
-        <h3>Off-Page & Link Building</h3>
-        <p>White-hat authority building through guest posting, digital PR, HARO outreach, citation building, and competitor gap analysis. Every link earned.</p>
-        <div class="service-tags">
-          <span class="service-tag">Guest Posting</span>
-          <span class="service-tag">Digital PR</span>
-          <span class="service-tag">HARO</span>
-        </div>
-      </div>
-      <div class="service-card reveal delay-1">
-        <div class="service-icon">🧠</div>
-        <h3>Semantic SEO & Content</h3>
-        <p>Topical authority architecture with entity mapping, NLP optimisation, and content cluster strategy to own entire topic universes — not just keywords.</p>
-        <div class="service-tags">
-          <span class="service-tag">Topical Authority</span>
-          <span class="service-tag">Entity Mapping</span>
-          <span class="service-tag">NLP</span>
-        </div>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon">🤖</div>
-        <h3>AI Search Visibility (GEO)</h3>
-        <p>Generative Engine Optimisation to ensure your brand appears in ChatGPT, Google AI Mode, AI Overviews, and Gemini — the fastest-growing discovery channel.</p>
-        <div class="service-tags">
-          <span class="service-tag">GEO / AEO</span>
-          <span class="service-tag">LLM Citations</span>
-          <span class="service-tag">AI Overviews</span>
-        </div>
-      </div>
-      <div class="service-card reveal delay-3">
-        <div class="service-icon">📍</div>
-        <h3>Local & B2B SEO</h3>
-        <p>Hyper-targeted local SEO for service businesses and B2B lead generation strategies that target buyers, decision-makers, and high-intent commercial queries.</p>
-        <div class="service-tags">
-          <span class="service-tag">Local Pack</span>
-          <span class="service-tag">GMB</span>
-          <span class="service-tag">B2B Strategy</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════ CASE STUDIES ═══════════════ -->
-<section id="portfolio">
-  <div class="container">
-    <div class="section-title-wrap">
-      <div class="section-tag reveal">Proven Results</div>
-      <div class="section-line reveal"></div>
-      <h2 class="section-title reveal">Featured <span>Case Studies</span></h2>
-      <p class="section-subtitle reveal">Five real brands. Five transparent, data-backed SEO transformations. Every number is verified and documented.</p>
-    </div>
+    <!-- ═══════════════ SERVICES ═══════════════ -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title-wrap">
+                <div class="section-tag reveal">What I Do</div>
+                <div class="section-line reveal"></div>
+                <h2 class="section-title reveal">My <span>SEO Services</span></h2>
+                <p class="section-subtitle reveal">Six disciplines. One unified system. Each layer compounds the others
+                    for results that grow month over month.</p>
+            </div>
 
-    <div class="portfolio-grid">
+            <div class="services-grid">
+                <div class="service-card reveal delay-1">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Technical SEO</h3>
+                    <p>Full site audits, Core Web Vitals, crawl architecture, schema markup — everything under the hood
+                        that determines whether Google can and will rank your pages.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Site Audit</span>
+                        <span class="service-tag">CWV</span>
+                        <span class="service-tag">Schema</span>
+                        <span class="service-tag">Crawl Budget</span>
+                    </div>
+                </div>
+                <div class="service-card reveal delay-2">
+                    <div class="service-icon">🎯</div>
+                    <h3>On-Page SEO</h3>
+                    <p>Intent-driven keyword mapping, meta architecture, content optimisation, E-E-A-T signals, and
+                        internal linking structures designed to capture every opportunity.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Keyword Mapping</span>
+                        <span class="service-tag">E-E-A-T</span>
+                        <span class="service-tag">Internal Links</span>
+                    </div>
+                </div>
+                <div class="service-card reveal delay-3">
+                    <div class="service-icon">🌐</div>
+                    <h3>Off-Page & Link Building</h3>
+                    <p>White-hat authority building through guest posting, digital PR, HARO outreach, citation building,
+                        and competitor gap analysis. Every link earned.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Guest Posting</span>
+                        <span class="service-tag">Digital PR</span>
+                        <span class="service-tag">HARO</span>
+                    </div>
+                </div>
+                <div class="service-card reveal delay-1">
+                    <div class="service-icon">🧠</div>
+                    <h3>Semantic SEO & Content</h3>
+                    <p>Topical authority architecture with entity mapping, NLP optimisation, and content cluster
+                        strategy to own entire topic universes — not just keywords.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Topical Authority</span>
+                        <span class="service-tag">Entity Mapping</span>
+                        <span class="service-tag">NLP</span>
+                    </div>
+                </div>
+                <div class="service-card reveal delay-2">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Search Visibility (GEO)</h3>
+                    <p>Generative Engine Optimisation to ensure your brand appears in ChatGPT, Google AI Mode, AI
+                        Overviews, and Gemini — the fastest-growing discovery channel.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">GEO / AEO</span>
+                        <span class="service-tag">LLM Citations</span>
+                        <span class="service-tag">AI Overviews</span>
+                    </div>
+                </div>
+                <div class="service-card reveal delay-3">
+                    <div class="service-icon">📍</div>
+                    <h3>Local & B2B SEO</h3>
+                    <p>Hyper-targeted local SEO for service businesses and B2B lead generation strategies that target
+                        buyers, decision-makers, and high-intent commercial queries.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Local Pack</span>
+                        <span class="service-tag">GMB</span>
+                        <span class="service-tag">B2B Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- ── FEATURED 1: Primal Pet Foods ── -->
-      <div class="portfolio-item-featured reveal">
-        <div class="portfolio-thumb thumb-blue">
-          <div class="portfolio-thumb-inner">
-            <div class="thumb-emoji">🐾</div>
-            <div class="thumb-metrics">
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">30.9K</div>
-                <div class="thumb-metric-label">Monthly Visitors</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">8.1K</div>
-                <div class="thumb-metric-label">Keywords</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">34</div>
-                <div class="thumb-metric-label">AI Score</div>
-              </div>
+    <!-- ═══════════════ CASE STUDIES ═══════════════ -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title-wrap">
+                <div class="section-tag reveal">Proven Results</div>
+                <div class="section-line reveal"></div>
+                <h2 class="section-title reveal">Featured <span>Case Studies</span></h2>
+                <p class="section-subtitle reveal">Five real brands. Five transparent, data-backed SEO transformations.
+                    Every number is verified and documented.</p>
             </div>
-          </div>
-          <div class="thumb-cs-num">01</div>
-        </div>
-        <div class="portfolio-info">
-          <div>
-            <div class="portfolio-meta">
-              <span class="portfolio-tag">Pet Nutrition · E-Commerce</span>
-              <span class="portfolio-duration"><i class="fas fa-clock"></i> 18 Months</span>
-            </div>
-            <h3>From Invisible to<br><em>Industry Authority</em></h3>
-            <p>An 18-month full-spectrum SEO engagement that transformed a premium pet food brand into a dominant organic force — ranking for 8,100+ keywords, earning nearly 31,000 monthly visitors, and achieving AI visibility across every major LLM platform including ChatGPT, Gemini, AI Overview and AI Mode.</p>
-          </div>
-          <div>
-            <div class="portfolio-stats-row">
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-green">8.1K</div>
-                <div class="portfolio-stat-label">Keywords</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-blue">30.9K</div>
-                <div class="portfolio-stat-label">Monthly Traffic</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-gold">2.4K</div>
-                <div class="portfolio-stat-label">Ref. Domains</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-purple">34</div>
-                <div class="portfolio-stat-label">AI Visibility</div>
-              </div>
-            </div>
-            <a href="case-studies/primal-pet-foods.html" class="portfolio-link">
-              View Case Study <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- ── FEATURED 2: Michael Best ── -->
-      <div class="portfolio-item-featured reveal">
-        <div class="portfolio-info" style="order: 1;">
-          <div>
-            <div class="portfolio-meta">
-              <span class="portfolio-tag" style="color:#c4b5fd;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);">Professional Services</span>
-              <span class="portfolio-duration"><i class="fas fa-clock"></i> 10 Months</span>
-            </div>
-            <h3>From Obscurity to<br><em>Organic Authority</em></h3>
-            <p>A 10-month full-spectrum SEO engagement that elevated michaelbest.com from near-zero search presence to a dominant authority — ranking 13,800+ keywords, achieving 21,700 monthly organic visitors, and breaking into AI-powered search across every major platform.</p>
-          </div>
-          <div>
-            <div class="portfolio-stats-row">
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-green">13.8K</div>
-                <div class="portfolio-stat-label">Keywords</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-blue">21.7K</div>
-                <div class="portfolio-stat-label">Monthly Traffic</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-gold">2.8K</div>
-                <div class="portfolio-stat-label">Ref. Domains</div>
-              </div>
-              <div class="portfolio-stat">
-                <div class="portfolio-stat-num c-purple">23</div>
-                <div class="portfolio-stat-label">AI Visibility</div>
-              </div>
-            </div>
-            <a href="case-studies/michael-best.html" class="portfolio-link" style="background:#7c3aed;">
-              View Case Study <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-thumb thumb-purple" style="order: 2;">
-          <div class="portfolio-thumb-inner">
-            <div class="thumb-emoji">💼</div>
-            <div class="thumb-metrics">
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">21.7K</div>
-                <div class="thumb-metric-label">Monthly Visitors</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">13.8K</div>
-                <div class="thumb-metric-label">Keywords</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">23</div>
-                <div class="thumb-metric-label">AI Score</div>
-              </div>
-            </div>
-          </div>
-          <div class="thumb-cs-num">02</div>
-        </div>
-      </div>
+            <div class="portfolio-grid">
 
-      <!-- ── CARD 3: ShawCore ── -->
-      <a href="case-studies/shaw-core.html" class="portfolio-item reveal delay-1">
-        <div class="portfolio-thumb thumb-teal">
-          <div class="portfolio-thumb-inner">
-            <div class="thumb-emoji">🏠</div>
-            <div class="thumb-metrics">
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">1.4K</div>
-                <div class="thumb-metric-label">Traffic</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">655</div>
-                <div class="thumb-metric-label">Keywords</div>
-              </div>
-            </div>
-          </div>
-          <div class="thumb-cs-num">03</div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-meta">
-            <span class="portfolio-tag" style="color:#5eead4;background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2);">Home Services · Remodeling</span>
-            <span class="portfolio-duration"><i class="fas fa-clock"></i> 6 Months</span>
-          </div>
-          <h3>From Local Ghost to<br><em>Regional Authority</em></h3>
-          <p>ShawCore Remodeling pulled from digital obscurity into a dominant local search presence — 655+ keywords, 1,400 monthly visitors, and verified AI visibility across all major LLM platforms.</p>
-          <div class="portfolio-stats-row">
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-green">655</div>
-              <div class="portfolio-stat-label">Keywords</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-blue">1.4K</div>
-              <div class="portfolio-stat-label">Traffic</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-gold">576</div>
-              <div class="portfolio-stat-label">Ref. Domains</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-purple">24</div>
-              <div class="portfolio-stat-label">AI Score</div>
-            </div>
-          </div>
-          <div class="portfolio-link" style="background:#0d9488;">
-            View Case Study <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-      </a>
+                <!-- ── FEATURED 1: Primal Pet Foods ── -->
+                <div class="portfolio-item-featured reveal">
+                    <div class="portfolio-thumb thumb-blue">
+                        <div class="portfolio-thumb-inner">
+                            <div class="thumb-emoji">🐾</div>
+                            <div class="thumb-metrics">
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">30.9K</div>
+                                    <div class="thumb-metric-label">Monthly Visitors</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">8.1K</div>
+                                    <div class="thumb-metric-label">Keywords</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">34</div>
+                                    <div class="thumb-metric-label">AI Score</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-cs-num">01</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag">Pet Nutrition · E-Commerce</span>
+                                <span class="portfolio-duration"><i class="fas fa-clock"></i> 18 Months</span>
+                            </div>
+                            <h3>From Invisible to<br><em>Industry Authority</em></h3>
+                            <p>An 18-month full-spectrum SEO engagement that transformed a premium pet food brand into a
+                                dominant organic force — ranking for 8,100+ keywords, earning nearly 31,000 monthly
+                                visitors, and achieving AI visibility across every major LLM platform including ChatGPT,
+                                Gemini, AI Overview and AI Mode.</p>
+                        </div>
+                        <div>
+                            <div class="portfolio-stats-row">
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-green">8.1K</div>
+                                    <div class="portfolio-stat-label">Keywords</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-blue">30.9K</div>
+                                    <div class="portfolio-stat-label">Monthly Traffic</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-gold">2.4K</div>
+                                    <div class="portfolio-stat-label">Ref. Domains</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-purple">34</div>
+                                    <div class="portfolio-stat-label">AI Visibility</div>
+                                </div>
+                            </div>
+                            <a href="case-studies/primal-pet-foods.html" class="portfolio-link">
+                                View Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- ── CARD 4: AWZ Auto Transport ── -->
-      <a href="case-studies/awz-autotransport.html" class="portfolio-item reveal delay-2">
-        <div class="portfolio-thumb thumb-orange">
-          <div class="portfolio-thumb-inner">
-            <div class="thumb-emoji">🚗</div>
-            <div class="thumb-metrics">
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">10K</div>
-                <div class="thumb-metric-label">Backlinks</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">133</div>
-                <div class="thumb-metric-label">Domains</div>
-              </div>
+                <!-- ── FEATURED 2: Michael Best ── -->
+                <div class="portfolio-item-featured reveal">
+                    <div class="portfolio-info" style="order: 1;">
+                        <div>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag"
+                                    style="color:#c4b5fd;background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);">Professional
+                                    Services</span>
+                                <span class="portfolio-duration"><i class="fas fa-clock"></i> 10 Months</span>
+                            </div>
+                            <h3>From Obscurity to<br><em>Organic Authority</em></h3>
+                            <p>A 10-month full-spectrum SEO engagement that elevated michaelbest.com from near-zero
+                                search presence to a dominant authority — ranking 13,800+ keywords, achieving 21,700
+                                monthly organic visitors, and breaking into AI-powered search across every major
+                                platform.</p>
+                        </div>
+                        <div>
+                            <div class="portfolio-stats-row">
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-green">13.8K</div>
+                                    <div class="portfolio-stat-label">Keywords</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-blue">21.7K</div>
+                                    <div class="portfolio-stat-label">Monthly Traffic</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-gold">2.8K</div>
+                                    <div class="portfolio-stat-label">Ref. Domains</div>
+                                </div>
+                                <div class="portfolio-stat">
+                                    <div class="portfolio-stat-num c-purple">23</div>
+                                    <div class="portfolio-stat-label">AI Visibility</div>
+                                </div>
+                            </div>
+                            <a href="case-studies/michael-best.html" class="portfolio-link" style="background:#7c3aed;">
+                                View Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-thumb thumb-purple" style="order: 2;">
+                        <div class="portfolio-thumb-inner">
+                            <div class="thumb-emoji">💼</div>
+                            <div class="thumb-metrics">
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">21.7K</div>
+                                    <div class="thumb-metric-label">Monthly Visitors</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">13.8K</div>
+                                    <div class="thumb-metric-label">Keywords</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">23</div>
+                                    <div class="thumb-metric-label">AI Score</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-cs-num">02</div>
+                    </div>
+                </div>
+
+                <!-- ── CARD 3: ShawCore ── -->
+                <a href="case-studies/shaw-core.html" class="portfolio-item reveal delay-1">
+                    <div class="portfolio-thumb thumb-teal">
+                        <div class="portfolio-thumb-inner">
+                            <div class="thumb-emoji">🏠</div>
+                            <div class="thumb-metrics">
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">1.4K</div>
+                                    <div class="thumb-metric-label">Traffic</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">655</div>
+                                    <div class="thumb-metric-label">Keywords</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-cs-num">03</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"
+                                style="color:#5eead4;background:rgba(20,184,166,0.1);border-color:rgba(20,184,166,0.2);">Home
+                                Services · Remodeling</span>
+                            <span class="portfolio-duration"><i class="fas fa-clock"></i> 6 Months</span>
+                        </div>
+                        <h3>From Local Ghost to<br><em>Regional Authority</em></h3>
+                        <p>ShawCore Remodeling pulled from digital obscurity into a dominant local search presence —
+                            655+ keywords, 1,400 monthly visitors, and verified AI visibility across all major LLM
+                            platforms.</p>
+                        <div class="portfolio-stats-row">
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-green">655</div>
+                                <div class="portfolio-stat-label">Keywords</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-blue">1.4K</div>
+                                <div class="portfolio-stat-label">Traffic</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-gold">576</div>
+                                <div class="portfolio-stat-label">Ref. Domains</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-purple">24</div>
+                                <div class="portfolio-stat-label">AI Score</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-link" style="background:#0d9488;">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ── CARD 4: AWZ Auto Transport ── -->
+                <a href="case-studies/awz-autotransport.html" class="portfolio-item reveal delay-2">
+                    <div class="portfolio-thumb thumb-orange">
+                        <div class="portfolio-thumb-inner">
+                            <div class="thumb-emoji">🚗</div>
+                            <div class="thumb-metrics">
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">10K</div>
+                                    <div class="thumb-metric-label">Backlinks</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">133</div>
+                                    <div class="thumb-metric-label">Domains</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-cs-num">04</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"
+                                style="color:#fb923c;background:rgba(234,88,12,0.1);border-color:rgba(234,88,12,0.2);">Auto
+                                Transport · Off-Page SEO</span>
+                            <span class="portfolio-duration"><i class="fas fa-clock"></i> 3 Months</span>
+                        </div>
+                        <h3>Building Authority<br>from the <em>Outside In</em></h3>
+                        <p>A 3-month off-page sprint that built the backlink foundation, 133 referring domains, 10K+
+                            links, and early AI search presence for a national auto transport brand from near zero.</p>
+                        <div class="portfolio-stats-row">
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-gold">133</div>
+                                <div class="portfolio-stat-label">Ref. Domains</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-blue">10K</div>
+                                <div class="portfolio-stat-label">Backlinks</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-green">144</div>
+                                <div class="portfolio-stat-label">Traffic</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-purple">14</div>
+                                <div class="portfolio-stat-label">AI Score</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-link" style="background:#ea580c;">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ── CARD 5: Innovation M ── -->
+                <a href="case-studies/innovation-m.html" class="portfolio-item reveal delay-3">
+                    <div class="portfolio-thumb thumb-green">
+                        <div class="portfolio-thumb-inner">
+                            <div class="thumb-emoji">💻</div>
+                            <div class="thumb-metrics">
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">7K</div>
+                                    <div class="thumb-metric-label">Traffic</div>
+                                </div>
+                                <div class="thumb-metric">
+                                    <div class="thumb-metric-num">1.2K</div>
+                                    <div class="thumb-metric-label">Keywords</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-cs-num">05</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="portfolio-tag"
+                                style="color:#4ade80;background:rgba(22,163,74,0.1);border-color:rgba(22,163,74,0.2);">B2B
+                                · IT Managed Services</span>
+                            <span class="portfolio-duration"><i class="fas fa-clock"></i> Full-Spectrum</span>
+                        </div>
+                        <h3>From Invisible to<br><em>Industry Presence</em></h3>
+                        <p>Full-spectrum SEO built an IT managed services provider from zero digital footprint to 7,000
+                            monthly organic visitors — ranking 1,200+ keywords and establishing AI search presence.</p>
+                        <div class="portfolio-stats-row">
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-green">7K</div>
+                                <div class="portfolio-stat-label">Traffic</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-blue">1.2K</div>
+                                <div class="portfolio-stat-label">Keywords</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-gold">299</div>
+                                <div class="portfolio-stat-label">Ref. Domains</div>
+                            </div>
+                            <div class="portfolio-stat">
+                                <div class="portfolio-stat-num c-purple">14</div>
+                                <div class="portfolio-stat-label">AI Score</div>
+                            </div>
+                        </div>
+                        <div class="portfolio-link" style="background:#16a34a;">
+                            View Case Study <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
             </div>
-          </div>
-          <div class="thumb-cs-num">04</div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-meta">
-            <span class="portfolio-tag" style="color:#fb923c;background:rgba(234,88,12,0.1);border-color:rgba(234,88,12,0.2);">Auto Transport · Off-Page SEO</span>
-            <span class="portfolio-duration"><i class="fas fa-clock"></i> 3 Months</span>
-          </div>
-          <h3>Building Authority<br>from the <em>Outside In</em></h3>
-          <p>A 3-month off-page sprint that built the backlink foundation, 133 referring domains, 10K+ links, and early AI search presence for a national auto transport brand from near zero.</p>
-          <div class="portfolio-stats-row">
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-gold">133</div>
-              <div class="portfolio-stat-label">Ref. Domains</div>
+    </section>
+
+    <!-- ═══════════════ SKILLS ═══════════════ -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title-wrap">
+                <div class="section-tag reveal">Expertise</div>
+                <div class="section-line reveal"></div>
+                <h2 class="section-title reveal">My <span>Skills</span></h2>
+                <p class="section-subtitle reveal">The full toolkit behind every campaign — from research and strategy
+                    to execution and measurement.</p>
             </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-blue">10K</div>
-              <div class="portfolio-stat-label">Backlinks</div>
+            <div class="skills-grid">
+                <div class="skill-category reveal delay-1">
+                    <div class="skill-cat-icon">🔍</div>
+                    <div class="skill-cat-title">SEO Disciplines</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">On-Page SEO</span>
+                        <span class="skill-tag">Off-Page SEO</span>
+                        <span class="skill-tag">Local SEO</span>
+                        <span class="skill-tag">E-Commerce SEO</span>
+                        <span class="skill-tag">B2B SEO</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal delay-2">
+                    <div class="skill-cat-icon">🛠️</div>
+                    <div class="skill-cat-title">Tools & Platforms</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SEMrush</span>
+                        <span class="skill-tag">Ahrefs</span>
+                        <span class="skill-tag">Google Search Console</span>
+                        <span class="skill-tag">GA4</span>
+                        <span class="skill-tag">Screaming Frog</span>
+                        <span class="skill-tag">Surfer SEO</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal delay-3">
+                    <div class="skill-cat-icon">✍️</div>
+                    <div class="skill-cat-title">Content & Strategy</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Topical Authority</span>
+                        <span class="skill-tag">Content Clusters</span>
+                        <span class="skill-tag">Keyword Research</span>
+                        <span class="skill-tag">Entity SEO</span>
+                        <span class="skill-tag">NLP Optimisation</span>
+                        <span class="skill-tag">EEAT Signals</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal delay-4">
+                    <div class="skill-cat-icon">🤖</div>
+                    <div class="skill-cat-title">AI Search (GEO)</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ChatGPT Visibility</span>
+                        <span class="skill-tag">Google AI Mode</span>
+                        <span class="skill-tag">AI Overviews</span>
+                        <span class="skill-tag">Gemini Citations</span>
+                        <span class="skill-tag">GEO Strategy</span>
+                        <span class="skill-tag">AEO</span>
+                    </div>
+                </div>
             </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-green">144</div>
-              <div class="portfolio-stat-label">Traffic</div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title-wrap">
+                <div class="section-tag reveal">Get In Touch</div>
+                <div class="section-line reveal"></div>
+                <h2 class="section-title reveal">Let's Build Something <span>Amazing</span></h2>
+                <p class="section-subtitle reveal">Ready to grow your organic presence? I'd love to hear about your
+                    project and show you exactly how SEO can transform your business.</p>
             </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-purple">14</div>
-              <div class="portfolio-stat-label">AI Score</div>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal left">
+                    <h2>Let's Work<br><span>Together</span></h2>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to grow your organic
+                        search presence. Tell me where your site stands — I'll tell you how to get it where you want it
+                        to be.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-item-text">
+                                <label>Email</label>
+                                <span>hello@yourportfolio.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-item-text">
+                                <label>Location</label>
+                                <span>Lahore, Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="contact-item-text">
+                                <label>Availability</label>
+                                <span>Open to New Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" title="Upwork"><i class="fas fa-briefcase"></i></a>
+                        <a href="#" class="social-link" title="Fiverr"><i class="fas fa-star"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form reveal right">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@company.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Website URL</label>
+                        <input type="text" placeholder="https://yoursite.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" placeholder="SEO Consultation / Project Inquiry">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea
+                            placeholder="Tell me about your project, current SEO challenges, and what you're hoping to achieve..."></textarea>
+                    </div>
+                    <button class="form-submit" type="button">
+                        <i class="fas fa-paper-plane"></i> &nbsp;Send Message
+                    </button>
+                </div>
             </div>
-          </div>
-          <div class="portfolio-link" style="background:#ea580c;">
-            View Case Study <i class="fas fa-arrow-right"></i>
-          </div>
         </div>
-      </a>
+    </section>
 
-      <!-- ── CARD 5: Innovation M ── -->
-      <a href="case-studies/innovation-m.html" class="portfolio-item reveal delay-3">
-        <div class="portfolio-thumb thumb-green">
-          <div class="portfolio-thumb-inner">
-            <div class="thumb-emoji">💻</div>
-            <div class="thumb-metrics">
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">7K</div>
-                <div class="thumb-metric-label">Traffic</div>
-              </div>
-              <div class="thumb-metric">
-                <div class="thumb-metric-num">1.2K</div>
-                <div class="thumb-metric-label">Keywords</div>
-              </div>
-            </div>
-          </div>
-          <div class="thumb-cs-num">05</div>
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer>
+        <div class="container">
+            <p>Copyright © 2026 | <span>Ahmed Usman Portfolio</span> | All Rights Reserved</p>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-meta">
-            <span class="portfolio-tag" style="color:#4ade80;background:rgba(22,163,74,0.1);border-color:rgba(22,163,74,0.2);">B2B · IT Managed Services</span>
-            <span class="portfolio-duration"><i class="fas fa-clock"></i> Full-Spectrum</span>
-          </div>
-          <h3>From Invisible to<br><em>Industry Presence</em></h3>
-          <p>Full-spectrum SEO built an IT managed services provider from zero digital footprint to 7,000 monthly organic visitors — ranking 1,200+ keywords and establishing AI search presence.</p>
-          <div class="portfolio-stats-row">
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-green">7K</div>
-              <div class="portfolio-stat-label">Traffic</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-blue">1.2K</div>
-              <div class="portfolio-stat-label">Keywords</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-gold">299</div>
-              <div class="portfolio-stat-label">Ref. Domains</div>
-            </div>
-            <div class="portfolio-stat">
-              <div class="portfolio-stat-num c-purple">14</div>
-              <div class="portfolio-stat-label">AI Score</div>
-            </div>
-          </div>
-          <div class="portfolio-link" style="background:#16a34a;">
-            View Case Study <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-      </a>
+    </footer>
 
-    </div>
-  </div>
-</section>
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <script>
+        /* ── Typed text animation ── */
+        const roles = [
+            'SEO Specialist',
+            'Organic Growth Expert',
+            'Link Building Strategist',
+            'AI Search Optimizer',
+            'Content Authority Builder'
+        ];
+        let roleIndex = 0, charIndex = 0, isDeleting = false;
+        const typedEl = document.getElementById('typedText');
 
-<!-- ═══════════════ SKILLS ═══════════════ -->
-<section id="skills">
-  <div class="container">
-    <div class="section-title-wrap">
-      <div class="section-tag reveal">Expertise</div>
-      <div class="section-line reveal"></div>
-      <h2 class="section-title reveal">My <span>Skills</span></h2>
-      <p class="section-subtitle reveal">The full toolkit behind every campaign — from research and strategy to execution and measurement.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-category reveal delay-1">
-        <div class="skill-cat-icon">🔍</div>
-        <div class="skill-cat-title">SEO Disciplines</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Technical SEO</span>
-          <span class="skill-tag">On-Page SEO</span>
-          <span class="skill-tag">Off-Page SEO</span>
-          <span class="skill-tag">Local SEO</span>
-          <span class="skill-tag">E-Commerce SEO</span>
-          <span class="skill-tag">B2B SEO</span>
-        </div>
-      </div>
-      <div class="skill-category reveal delay-2">
-        <div class="skill-cat-icon">🛠️</div>
-        <div class="skill-cat-title">Tools & Platforms</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SEMrush</span>
-          <span class="skill-tag">Ahrefs</span>
-          <span class="skill-tag">Google Search Console</span>
-          <span class="skill-tag">GA4</span>
-          <span class="skill-tag">Screaming Frog</span>
-          <span class="skill-tag">Surfer SEO</span>
-        </div>
-      </div>
-      <div class="skill-category reveal delay-3">
-        <div class="skill-cat-icon">✍️</div>
-        <div class="skill-cat-title">Content & Strategy</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Topical Authority</span>
-          <span class="skill-tag">Content Clusters</span>
-          <span class="skill-tag">Keyword Research</span>
-          <span class="skill-tag">Entity SEO</span>
-          <span class="skill-tag">NLP Optimisation</span>
-          <span class="skill-tag">EEAT Signals</span>
-        </div>
-      </div>
-      <div class="skill-category reveal delay-4">
-        <div class="skill-cat-icon">🤖</div>
-        <div class="skill-cat-title">AI Search (GEO)</div>
-        <div class="skill-tags">
-          <span class="skill-tag">ChatGPT Visibility</span>
-          <span class="skill-tag">Google AI Mode</span>
-          <span class="skill-tag">AI Overviews</span>
-          <span class="skill-tag">Gemini Citations</span>
-          <span class="skill-tag">GEO Strategy</span>
-          <span class="skill-tag">AEO</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        function type() {
+            const current = roles[roleIndex];
+            if (isDeleting) {
+                typedEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            let delay = isDeleting ? 60 : 100;
+            if (!isDeleting && charIndex === current.length) {
+                delay = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                delay = 400;
+            }
+            setTimeout(type, delay);
+        }
+        type();
 
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title-wrap">
-      <div class="section-tag reveal">Get In Touch</div>
-      <div class="section-line reveal"></div>
-      <h2 class="section-title reveal">Let's Build Something <span>Amazing</span></h2>
-      <p class="section-subtitle reveal">Ready to grow your organic presence? I'd love to hear about your project and show you exactly how SEO can transform your business.</p>
-    </div>
-    <div class="contact-wrapper">
-      <div class="contact-info reveal left">
-        <h2>Let's Work<br><span>Together</span></h2>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to grow your organic search presence. Tell me where your site stands — I'll tell you how to get it where you want it to be.</p>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-            <div class="contact-item-text">
-              <label>Email</label>
-              <span>hello@yourportfolio.com</span>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="contact-item-text">
-              <label>Location</label>
-              <span>Lahore, Pakistan</span>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="contact-item-text">
-              <label>Availability</label>
-              <span>Open to New Projects</span>
-            </div>
-          </div>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" title="Upwork"><i class="fas fa-briefcase"></i></a>
-          <a href="#" class="social-link" title="Fiverr"><i class="fas fa-star"></i></a>
-        </div>
-      </div>
-      <div class="contact-form reveal right">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="John Smith">
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" placeholder="john@company.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Website URL</label>
-          <input type="text" placeholder="https://yoursite.com">
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="SEO Consultation / Project Inquiry">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell me about your project, current SEO challenges, and what you're hoping to achieve..."></textarea>
-        </div>
-        <button class="form-submit" type="button">
-          <i class="fas fa-paper-plane"></i> &nbsp;Send Message
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+        /* ── Scroll reveal ── */
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-  <div class="container">
-    <p>Copyright © 2026 | <span>Ahmed Usman Portfolio</span> | All Rights Reserved</p>
-  </div>
-</footer>
+        /* ── Active nav link on scroll ── */
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
 
-<!-- ═══════════════ SCRIPTS ═══════════════ -->
-<script>
-/* ── Typed text animation ── */
-const roles = [
-  'SEO Specialist',
-  'Organic Growth Expert',
-  'Link Building Strategist',
-  'AI Search Optimizer',
-  'Content Authority Builder'
-];
-let roleIndex = 0, charIndex = 0, isDeleting = false;
-const typedEl = document.getElementById('typedText');
+        window.addEventListener('scroll', () => {
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 60) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
 
-function type() {
-  const current = roles[roleIndex];
-  if (isDeleting) {
-    typedEl.textContent = current.substring(0, charIndex - 1);
-    charIndex--;
-  } else {
-    typedEl.textContent = current.substring(0, charIndex + 1);
-    charIndex++;
-  }
-  let delay = isDeleting ? 60 : 100;
-  if (!isDeleting && charIndex === current.length) {
-    delay = 2000;
-    isDeleting = true;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    delay = 400;
-  }
-  setTimeout(type, delay);
-}
-type();
+            // Active link
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 200) current = sec.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
 
-/* ── Scroll reveal ── */
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => revealObserver.observe(el));
+        /* ── Mobile menu ── */
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('open');
+        });
+        document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+        }
 
-/* ── Active nav link on scroll ── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+        /* ── Smooth scroll for all anchor links ── */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
 
-window.addEventListener('scroll', () => {
-  // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  if (window.scrollY > 60) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
-
-  // Active link
-  let current = '';
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 200) current = sec.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-  });
-});
-
-/* ── Mobile menu ── */
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.add('open');
-});
-document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-}
-
-/* ── Smooth scroll for all anchor links ── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const href = a.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-/* ── Portfolio link click propagation fix (Safe Removal) ── */
-// document.querySelectorAll('.portfolio-item .portfolio-link').forEach(link => {
-//   link.style.pointerEvents = 'none';
-// });
-</script>
+        /* ── Portfolio link click propagation fix (Safe Removal) ── */
+        // document.querySelectorAll('.portfolio-item .portfolio-link').forEach(link => {
+        //   link.style.pointerEvents = 'none';
+        // });
+    </script>
 </body>
+
 </html>
