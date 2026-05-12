@@ -1555,9 +1555,53 @@
         }
 
         .form-submit:hover {
-            background: var(--blue-dark);
+            background: var(--blue-light);
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(79, 142, 247, 0.4);
+            box-shadow: 0 10px 20px rgba(79, 142, 247, 0.2);
+        }
+
+        .form-submit.loading {
+            pointer-events: none;
+            opacity: 0.8;
+            color: transparent;
+            position: relative;
+        }
+
+        .form-submit.loading::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .form-success-msg {
+            display: none;
+            text-align: center;
+            padding: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 500;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* =============================================
@@ -2404,13 +2448,13 @@
                         search presence. Tell me where your site stands — I'll tell you how to get it where you want it
                         to be.</p>
                     <div class="contact-items">
-                        <div class="contact-item">
+                        <a href="mailto:ahmedusman.seo@gmail.com" class="contact-item">
                             <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contact-item-text">
                                 <label>Email</label>
                                 <span>ahmedusman.seo@gmail.com</span>
                             </div>
-                        </div>
+                        </a>
                         <div class="contact-item">
                             <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-item-text">
@@ -2448,29 +2492,32 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Your Name</label>
-                            <input type="text" placeholder="John Smith">
+                            <input type="text" id="contactName" placeholder="John Smith">
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" placeholder="john@company.com">
+                            <input type="email" id="contactEmail" placeholder="john@company.com">
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Website URL</label>
-                        <input type="text" placeholder="https://yoursite.com">
+                        <input type="text" id="contactWebsite" placeholder="https://yoursite.com">
                     </div>
                     <div class="form-group">
                         <label>Subject</label>
-                        <input type="text" placeholder="SEO Consultation / Project Inquiry">
+                        <input type="text" id="contactSubject" placeholder="SEO Consultation / Project Inquiry">
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <textarea
+                        <textarea id="contactMessage"
                             placeholder="Tell me about your project, current SEO challenges, and what you're hoping to achieve..."></textarea>
                     </div>
-                    <button class="form-submit" type="button">
+                    <button class="form-submit" type="button" id="contactSubmit">
                         <i class="fas fa-paper-plane"></i> &nbsp;Send Message
                     </button>
+                    <div id="contactSuccess" class="form-success-msg">
+                        <i class="fas fa-check-circle"></i> &nbsp;Email draft prepared successfully!
+                    </div>
                 </div>
             </div>
         </div>
@@ -2484,6 +2531,12 @@
     </footer>
 
     <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("xahLQ-NnoxDd6q-I_");
+        })();
+    </script>
     <script>
         /* ── Typed text animation ── */
         const roles = [
@@ -2573,10 +2626,66 @@
             });
         });
 
-        /* ── Portfolio link click propagation fix (Safe Removal) ── */
-        // document.querySelectorAll('.portfolio-item .portfolio-link').forEach(link => {
-        //   link.style.pointerEvents = 'none';
-        // });
+        /* ── Contact Form Submission ── */
+        document.getElementById('contactSubmit').addEventListener('click', function() {
+            const btn = this;
+            const successMsg = document.getElementById('contactSuccess');
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const website = document.getElementById('contactWebsite').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+
+            // Simple validation
+            if(!name || !email || !message) {
+                alert('Please fill in your name, email and message.');
+                return;
+            }
+
+            // Show loading state
+            btn.classList.add('loading');
+            
+            const mailtoLink = `mailto:ahmedusman.seo@gmail.com?subject=${encodeURIComponent(subject || 'SEO Project Inquiry')}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}`
+            )}`;
+
+            // Send via EmailJS
+            emailjs.send("service_3a8z55d", "template_htwuowh", {
+                name: name,
+                email: email,
+                website: website,
+                title: subject || "New Project Inquiry",
+                message: message
+            }).then(function(response) {
+                console.log("EmailJS Success!", response.status, response.text);
+                btn.classList.remove('loading');
+                
+                // Show success
+                successMsg.style.display = 'block';
+                successMsg.innerHTML = '<i class="fas fa-check-circle"></i> &nbsp;Message sent successfully! I will get back to you soon.';
+                successMsg.style.background = 'rgba(16, 185, 129, 0.1)';
+                successMsg.style.color = '#10b981';
+                
+                // Reset form
+                document.getElementById('contactName').value = '';
+                document.getElementById('contactEmail').value = '';
+                document.getElementById('contactWebsite').value = '';
+                document.getElementById('contactSubject').value = '';
+                document.getElementById('contactMessage').value = '';
+
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 8000);
+            }, function(error) {
+                console.error("EmailJS Error Details:", error);
+                btn.classList.remove('loading');
+                successMsg.style.display = 'block';
+                successMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> &nbsp;Error: ' + (error.text || 'Something went wrong') + '. Please check console.';
+                successMsg.style.background = 'rgba(239, 68, 68, 0.1)';
+                successMsg.style.color = '#ef4444';
+            });
+        });
     </script>
 </body>
 
