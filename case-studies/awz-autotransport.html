@@ -120,6 +120,25 @@
     letter-spacing: -0.02em;
   }
 
+  .hero-visual-bg {
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    z-index: 0;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, transparent 80%);
+    pointer-events: none;
+    filter: brightness(0.8) contrast(1.2);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-visual-bg { width: 100%; right: 0; opacity: 0.15; mask-image: linear-gradient(to top, transparent, rgba(0,0,0,1)); }
+  }
+
   .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -944,6 +963,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text">LINKS</div>
+  <img src="../images/auto transport image.png" alt="AWZ Auto Transport" class="hero-visual-bg">
   <div>
     <div class="hero-tag">Case Study · Auto Transport · Off-Page SEO</div>
     <h1 class="hero-title">Building Authority<br>from the <em>Outside In</em></h1>
