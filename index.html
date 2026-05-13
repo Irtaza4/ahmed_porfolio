@@ -447,8 +447,8 @@
         }
 
         .hero-img-wrap {
-            width: 340px;
-            height: 340px;
+            width: clamp(260px, 40vw, 340px);
+            height: clamp(260px, 40vw, 340px);
             border-radius: 50%;
             background: linear-gradient(135deg, rgba(79, 142, 247, 0.15), rgba(79, 142, 247, 0.04));
             border: 2px solid rgba(79, 142, 247, 0.2);
@@ -1753,8 +1753,40 @@
             }
 
             .hero-visual {
-                display: none;
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+                position: relative;
             }
+
+            /* Adjust Badges for Mobile */
+            .hero-badge {
+                position: absolute !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: auto !important;
+                min-width: 0 !important;
+                max-width: 140px !important;
+                height: 32px !important;
+                padding: 0 12px !important;
+                font-size: 10px !important;
+                white-space: nowrap !important;
+                border-radius: 40px !important;
+                box-sizing: border-box !important;
+                flex: none !important;
+            }
+
+            .hero-badge i {
+                font-size: 11px !important;
+                margin-right: 6px !important;
+            }
+
+            /* Final Spaced Positions */
+            .hero-badge.b1 { top: -10% !important; right: -10% !important; }
+            .hero-badge.b2 { top: 60% !important; right: -10% !important; }
+            .hero-badge.b3 { bottom: 10% !important; left: -15% !important; }
+            .hero-badge.b4 { top: 25% !important; left: -20% !important; }
 
             .about-grid {
                 grid-template-columns: 1fr;
