@@ -637,6 +637,7 @@
 
         .about-visual-wrap {
             position: relative;
+            width: 100%;
         }
 
         .about-visual-inner {
@@ -645,7 +646,7 @@
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .about-main-img {
@@ -676,7 +677,7 @@
             font-size: 13px;
             font-weight: 600;
             color: #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             z-index: 2;
         }
 
@@ -1052,7 +1053,7 @@
             font-size: 56px;
             line-height: 1;
             margin-bottom: 8px;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .thumb-cs-num {
@@ -1582,7 +1583,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .form-success-msg {
@@ -1600,8 +1603,15 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* =============================================
@@ -1724,6 +1734,7 @@
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding-top: 40px;
             }
 
             .hero-desc {
@@ -1738,6 +1749,7 @@
 
             .hero-stats {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .hero-visual {
@@ -1746,10 +1758,14 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 800px;
+                margin: 0 auto;
             }
 
             .services-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 30px;
             }
 
             .portfolio-item-featured {
@@ -1781,15 +1797,15 @@
             }
 
             section {
-                padding: 70px 0;
+                padding: 60px 0;
             }
 
             .container {
-                padding: 0 20px;
+                padding: 0 24px;
             }
 
             .nav-container {
-                padding: 0 20px;
+                padding: 0 24px;
             }
 
             .services-grid {
@@ -1802,6 +1818,7 @@
 
             .skills-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
 
             .form-row {
@@ -1809,8 +1826,7 @@
             }
 
             .hero-stats {
-                flex-wrap: wrap;
-                gap: 20px;
+                gap: 24px;
             }
 
             .about-mini-cards {
@@ -1820,6 +1836,10 @@
             .portfolio-item-featured {
                 grid-column: auto;
             }
+
+            .section-title {
+                font-size: 28px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1828,11 +1848,24 @@
             }
 
             .hero-name {
-                font-size: 36px;
+                font-size: 32px;
+            }
+
+            .hero-specialist {
+                font-size: 24px;
             }
 
             .contact-form {
-                padding: 24px;
+                padding: 20px;
+            }
+
+            .about-mini-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-tag {
+                font-size: 10px;
+                padding: 4px 12px;
             }
         }
     </style>
@@ -1914,7 +1947,7 @@
                     <div class="hero-icon-center" style="overflow:hidden;"><img src="images/ahmed.png" alt="Ahmed Usman"
                             style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
                     <div class="hero-badge b1"><i class="fas fa-chart-line"></i> +80% MoM Traffic</div>
-                    <div class="hero-badge b2"><i class="fas fa-robot"></i> AI Visibility: 74</div>
+                    <div class="hero-badge b2"><i class="fas fa-robot"></i> AI Visibility: 44</div>
                     <div class="hero-badge b3"><i class="fas fa-link"></i> 10K+ Backlinks</div>
                     <div class="hero-badge b4"><i class="fas fa-key"></i> 30K+ Keywords</div>
                 </div>
@@ -1954,7 +1987,7 @@
                                 <div class="about-mini-label">Backlinks Built</div>
                             </div>
                             <div class="about-mini-card">
-                                <div class="about-mini-num">74</div>
+                                <div class="about-mini-num">44</div>
                                 <div class="about-mini-label">Peak AI Score</div>
                             </div>
                         </div>
@@ -2090,7 +2123,8 @@
                 <!-- ── FEATURED 1: Primal Pet Foods ── -->
                 <div class="portfolio-item-featured reveal">
                     <div class="portfolio-thumb thumb-blue">
-                        <img src="images/pet food image.png" alt="Primal Pet Foods Case Study" class="portfolio-thumb-img">
+                        <img src="images/pet food image.png" alt="Primal Pet Foods Case Study"
+                            class="portfolio-thumb-img">
                         <div class="portfolio-thumb-inner">
                             <div class="thumb-metrics">
                                 <div class="thumb-metric">
@@ -2186,7 +2220,8 @@
                         </div>
                     </div>
                     <div class="portfolio-thumb thumb-purple" style="order: 2;">
-                        <img src="images/michal best image.png" alt="Michael Best Case Study" class="portfolio-thumb-img">
+                        <img src="images/michal best image.png" alt="Michael Best Case Study"
+                            class="portfolio-thumb-img">
                         <div class="portfolio-thumb-inner">
                             <div class="thumb-metrics">
                                 <div class="thumb-metric">
@@ -2210,7 +2245,8 @@
                 <!-- ── CARD 3: ShawCore ── -->
                 <a href="case-studies/shaw-core.html" class="portfolio-item reveal delay-1">
                     <div class="portfolio-thumb thumb-teal">
-                        <img src="images/remodeling image.png" alt="ShawCore Remodeling Case Study" class="portfolio-thumb-img">
+                        <img src="images/remodeling image.png" alt="ShawCore Remodeling Case Study"
+                            class="portfolio-thumb-img">
                         <div class="portfolio-thumb-inner">
                             <div class="thumb-metrics">
                                 <div class="thumb-metric">
@@ -2261,7 +2297,8 @@
                 <!-- ── CARD 4: AWZ Auto Transport ── -->
                 <a href="case-studies/awz-autotransport.html" class="portfolio-item reveal delay-2">
                     <div class="portfolio-thumb thumb-orange">
-                        <img src="images/auto transport image.png" alt="AWZ Auto Transport Case Study" class="portfolio-thumb-img">
+                        <img src="images/auto transport image.png" alt="AWZ Auto Transport Case Study"
+                            class="portfolio-thumb-img">
                         <div class="portfolio-thumb-inner">
                             <div class="thumb-metrics">
                                 <div class="thumb-metric">
@@ -2311,7 +2348,8 @@
                 <!-- ── CARD 5: Innovation M ── -->
                 <a href="case-studies/innovation-m.html" class="portfolio-item reveal delay-3">
                     <div class="portfolio-thumb thumb-green">
-                        <img src="images/software development image.png" alt="Innovation M Case Study" class="portfolio-thumb-img">
+                        <img src="images/software development image.png" alt="Innovation M Case Study"
+                            class="portfolio-thumb-img">
                         <div class="portfolio-thumb-inner">
                             <div class="thumb-metrics">
                                 <div class="thumb-metric">
@@ -2442,7 +2480,8 @@
                         search presence. Tell me where your site stands — I'll tell you how to get it where you want it
                         to be.</p>
                     <div class="contact-items">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedusman.seo@gmail.com" class="contact-item" target="_blank">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedusman.seo@gmail.com"
+                            class="contact-item" target="_blank">
                             <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
                             <div class="contact-item-text">
                                 <label>Email</label>
@@ -2472,7 +2511,8 @@
                         </a>
 
                         <!-- Mail -->
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedusman.seo@gmail.com" class="social-link" title="Mail" target="_blank">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmedusman.seo@gmail.com"
+                            class="social-link" title="Mail" target="_blank">
                             <i class="fas fa-envelope"></i>
                         </a>
 
@@ -2527,7 +2567,7 @@
     <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             emailjs.init("xahLQ-NnoxDd6q-I_");
         })();
     </script>
@@ -2621,10 +2661,10 @@
         });
 
         /* ── Contact Form Submission ── */
-        document.getElementById('contactSubmit').addEventListener('click', function() {
+        document.getElementById('contactSubmit').addEventListener('click', function () {
             const btn = this;
             const successMsg = document.getElementById('contactSuccess');
-            
+
             const name = document.getElementById('contactName').value;
             const email = document.getElementById('contactEmail').value;
             const website = document.getElementById('contactWebsite').value;
@@ -2632,14 +2672,14 @@
             const message = document.getElementById('contactMessage').value;
 
             // Simple validation
-            if(!name || !email || !message) {
+            if (!name || !email || !message) {
                 alert('Please fill in your name, email and message.');
                 return;
             }
 
             // Show loading state
             btn.classList.add('loading');
-            
+
             const mailtoLink = `mailto:ahmedusman.seo@gmail.com?subject=${encodeURIComponent(subject || 'SEO Project Inquiry')}&body=${encodeURIComponent(
                 `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}`
             )}`;
@@ -2651,16 +2691,16 @@
                 website: website,
                 title: subject || "New Project Inquiry",
                 message: message
-            }).then(function(response) {
+            }).then(function (response) {
                 console.log("EmailJS Success!", response.status, response.text);
                 btn.classList.remove('loading');
-                
+
                 // Show success
                 successMsg.style.display = 'block';
                 successMsg.innerHTML = '<i class="fas fa-check-circle"></i> &nbsp;Message sent successfully! I will get back to you soon.';
                 successMsg.style.background = 'rgba(16, 185, 129, 0.1)';
                 successMsg.style.color = '#10b981';
-                
+
                 // Reset form
                 document.getElementById('contactName').value = '';
                 document.getElementById('contactEmail').value = '';
@@ -2671,7 +2711,7 @@
                 setTimeout(() => {
                     successMsg.style.display = 'none';
                 }, 8000);
-            }, function(error) {
+            }, function (error) {
                 console.error("EmailJS Error Details:", error);
                 btn.classList.remove('loading');
                 successMsg.style.display = 'block';
